@@ -17,7 +17,7 @@ VALUES
 
 ;";
 
-$tmt = $conn->prepare($request);
+$stmt = $connection->prepare($request);
 $stmt->bindValue(':id', $_POST['id']);
 $stmt->bindValue(':nom', $_POST['nom']);
 $stmt->bindValue(':categorie', $_POST['categorie']);
