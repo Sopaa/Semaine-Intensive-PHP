@@ -22,6 +22,7 @@ SET
 `plaisirDesYeux` = :plaisirDesYeux,
 `degustation` = :degustation,
 `origine` = :origine,
+`prix` = :prix,
 `note` = :note,
 `stock` = :stock
 
@@ -41,6 +42,7 @@ $stmt->bindValue(':morphologie', $_POST['morphologie']);
 $stmt->bindValue(':plaisirDesYeux', $_POST['plaisirDesYeux']);
 $stmt->bindValue(':degustation', $_POST['degustation']);
 $stmt->bindValue(':origine', $_POST['origine']);
+$stmt->bindValue(':prix', $_POST['prix']);
 $stmt->bindValue(':note', $_POST['note']);
 $stmt->bindValue(':stock', $_POST['stock']);
 $stmt->execute();

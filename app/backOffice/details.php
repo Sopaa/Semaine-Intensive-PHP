@@ -18,6 +18,7 @@ $request = 'SELECT
 `plaisirDesYeux`,
 `degustation`,
 `origine`,
+`prix`,
 `note`,
 `stock`
 

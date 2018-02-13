@@ -8,18 +8,27 @@
 
 require_once "connexion.php";
 
-if (!isset($_POST['id']) || !isset($_POST['nom']) || !isset($_POST['categorie']) || !isset($_FILES['image']['name'])||
-    !isset($_POST['elevage']) || !isset($_POST['morphologie']) || !isset($_POST['plaisirDesYeux']) ||
-    !isset($_POST['degustation']) || !isset($_POST['origine']) || !isset($_POST['note'])|| !isset($_POST['stock'])) {
-    throw new Error('Please complete all the fields');
+if (empty($_POST['id']) || empty($_POST['nom']) || empty($_POST['categorie']) || empty($_FILES['image']['name'])||
+    empty($_POST['elevage']) || empty($_POST['morphologie']) || empty($_POST['plaisirDesYeux']) ||
+    empty($_POST['degustation']) || empty($_POST['origine']) || empty($_POST['note'])|| empty($_POST['stock'])) {
+    header('Location: index.php?error');
+    exit;
 }
+
+/*
+foreach($required as $field) {
+    if (empty($_POST[$field])) {
+        $error = true;
+    }
+}
+*/
 
 
 $request = "INSERT INTO
 `meat` 
-(`id`, `nom`, `categorie`, `image`, `elevage`, `morphologie`, `plaisirDesYeux`, `degustation`, `origine`, `note`, `stock`)
+(`id`, `nom`, `categorie`, `image`, `elevage`, `morphologie`, `plaisirDesYeux`, `degustation`, `origine`,`prix`, `note`, `stock`)
 VALUES 
-(:id, :nom, :categorie, :image, :elevage, :morphologie, :plaisirDesYeux, :degustation, :origine, :note , :stock) 
+(:id, :nom, :categorie, :image, :elevage, :morphologie, :plaisirDesYeux, :degustation, :origine, :prix, :note , :stock) 
 
 ;";
 
@@ -36,6 +45,7 @@ $stmt->bindValue(':morphologie', $_POST['morphologie']);
 $stmt->bindValue(':plaisirDesYeux', $_POST['plaisirDesYeux']);
 $stmt->bindValue(':degustation', $_POST['degustation']);
 $stmt->bindValue(':origine', $_POST['origine']);
+$stmt->bindValue(':prix', $_POST['prix']);
 $stmt->bindValue(':note', $_POST['note']);
 $stmt->bindValue(':stock', $_POST['stock']);
 $stmt->execute();

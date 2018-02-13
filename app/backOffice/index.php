@@ -18,6 +18,7 @@ $request = 'SELECT
 `plaisirDesYeux`,
 `degustation`,
 `origine`,
+`prix`,
 `note`,
 `stock`
 
@@ -39,6 +40,15 @@ $stmt->execute();
     <title>Document</title>
 </head>
 <body>
+
+<?php
+if (isset($_GET['error'])) {
+    ?>
+    echo 'error';
+    <div style="color: red"><?=$_GET['error']?></div>
+    <?php
+}
+?>
 
 <?php while(false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
 
