@@ -10,16 +10,16 @@ require_once "connexion.php";
 
 if (!isset($_POST['id']) || !isset($_POST['nom']) || !isset($_POST['categorie']) || !isset($_FILES['image']['name'])||
     !isset($_POST['elevage']) || !isset($_POST['morphologie']) || !isset($_POST['plaisirDesYeux']) ||
-    !isset($_POST['degustation']) || !isset($_POST['origine']) || !isset($_POST['note'])) {
+    !isset($_POST['degustation']) || !isset($_POST['origine']) || !isset($_POST['note'])|| !isset($_POST['stock'])) {
     throw new Error('Please complete all the fields');
 }
 
 
 $request = "INSERT INTO
 `meat` 
-(`id`, `nom`, `categorie`, `image`, `elevage`, `morphologie`, `plaisirDesYeux`, `degustation`, `origine`, `note`)
+(`id`, `nom`, `categorie`, `image`, `elevage`, `morphologie`, `plaisirDesYeux`, `degustation`, `origine`, `note`, `stock`)
 VALUES 
-(:id, :nom, :categorie, :image, :elevage, :morphologie, :plaisirDesYeux, :degustation, :origine, :note) 
+(:id, :nom, :categorie, :image, :elevage, :morphologie, :plaisirDesYeux, :degustation, :origine, :note , :stock) 
 
 ;";
 
@@ -37,6 +37,7 @@ $stmt->bindValue(':plaisirDesYeux', $_POST['plaisirDesYeux']);
 $stmt->bindValue(':degustation', $_POST['degustation']);
 $stmt->bindValue(':origine', $_POST['origine']);
 $stmt->bindValue(':note', $_POST['note']);
+$stmt->bindValue(':stock', $_POST['stock']);
 $stmt->execute();
 
 header('Location: index.php');
