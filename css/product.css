@@ -7,3 +7,9 @@
   flex-wrap: nowrap;
   justify-content: space-between;
 }
+
+.underFooterCopyright {
+  font-family: "avenir";
+  font-size: 14px;
+  color: white;
+}
