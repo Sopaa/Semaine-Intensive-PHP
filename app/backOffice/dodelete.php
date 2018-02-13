@@ -6,9 +6,6 @@
  * Time: 10:21
  */
 
-if(!isset($POST_['id'])){
-    throw new Error('Error');
-}
 
 require_once "connexion.php";
 
@@ -23,3 +20,4 @@ id = :id
 $stmt = $connection->prepare($request);
 $stmt->bindValue(':id', $_POST['id']);
 $stmt->execute();
+header('Location: index.php');

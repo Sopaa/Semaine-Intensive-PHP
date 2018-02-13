@@ -3,13 +3,10 @@
  * Created by PhpStorm.
  * User: ayshiff
  * Date: 13/02/2018
- * Time: 09:56
+ * Time: 11:08
  */
 
-
-
 require_once "connexion.php";
-
 
 $request = 'SELECT
 `id`,
@@ -35,9 +32,8 @@ $stmt->bindValue(':id', $_GET['id']);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-
-
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -47,12 +43,25 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <title>Document</title>
 </head>
 <body>
-<form action="dodelete.php" method="post">
-    <label for="id"> id : <input type="text" name="id" value="<?=$row['id'] ?>"></label>
-    <label for=""> Êtes-vous sûr de vouloir supprimer <?=$row['nom'] ?> ? </label>
+<h1> Details de <?=$row['nom'] ?></h1>
 
+<tr>
+    <td><?=$row['id']?></td>
+    <td><?=$row['categorie']?></td>
+    <td><?=$row['image']?></td>
+    <td><?=$row['elevage']?></td>
+    <td><?=$row['morphologie']?></td>
+    <td><?=$row['plaisirDesYeux']?></td>
+    <td><?=$row['degustation']?></td>
+    <td><?=$row['origine']?></td>
+    <td><?=$row['note']?></td>
+    <td><a href="details.php?id=<?=$row['id']?>"><?=$row['nom']?></a></td>
+    <td>
+        <a href="delete.php?id=<?=$row['id']?>"> Supprimer </a>
+        <a href="edit.php?id=<?=$row['id']?>"> Modifier </a>
+    </td>
+</tr>
 
-    <input type="submit" value="Supprimer">
 </form>
 
 </body>
