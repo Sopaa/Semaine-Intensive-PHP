@@ -1,15 +1,36 @@
-.header{
+@font-face {
+  font-family: "playfair";
+  src: url("../fonts/PlayfairDisplay-Regular.ttf");
+}
+
+@font-face {
+  font-family: "avenir";
+  src: url("../fonts/Avenir.ttc");
+}
+
+body {
+  background: black;
+}
+
+.header {
   margin-left: 100px;
   margin-right: 100px;
   border-bottom: 1px solid black;
 }
 
-nav{
+nav {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
+
+.navTitle {
+  font-family: "playfair";
+  font-size: 36px;
+  color: #fff;
+}
+
 .logoPart {
   width: 200px;
   height: 70px;
@@ -18,7 +39,7 @@ nav{
   flex-direction: row;
 }
 
-ul{
+ul {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -29,26 +50,30 @@ ul{
 
 .navItems {
   padding-left: 50px;
-
+  font-family: "playfair";
+  color: #fff;
+  font-family: 20px;
 }
-.productShow{
+
+.productShow {
   margin-left: 100px;
   margin-right: 100px;
 }
-.home{
+
+.home {
   width: 1240px;
   height: 402px;
   margin-top: 45px;
   margin-bottom: 63px;
-  background-color: red;
   overflow: hidden;
 }
 
-.homeImg{
+.homeImg {
   width: 100%;
   height: auto;
   margin-top: -200px;
 }
+
 .typeContainer {
   display: flex;
   flex-wrap: wrap;
@@ -58,32 +83,32 @@ ul{
   height: 180px;
   margin-right: 100px;
 }
+
 .types {
-
-  width:280px;
+  width: 280px;
   height: 180px;
-
 }
-.typesText{
-  color: red;
-  font-size: 40px;
+
+.typesText {
+  color: #fff;
+  font-size: 30px;
   position: absolute;
   /*padding-top: 80px;
   padding-left: 80px;*/
-
-z-index: 1;
-width: 100%;
-
+  z-index: 1;
+  width: 100%;
+  font-family: "playfair";
 }
 
 .typesImg {
   width: 100%;
   filter: grayscale(100%);
 }
-.typesImg:hover{
+
+.typesImg:hover {
   filter: grayscale(0%);
 }
 
-.typesText:hover .typesImg:hover{
+.typesText:hover .typesImg:hover {
   filter: grayscale(0%);
 }
