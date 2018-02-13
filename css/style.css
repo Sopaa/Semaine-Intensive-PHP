@@ -1,0 +1,89 @@
+.header{
+  margin-left: 100px;
+  margin-right: 100px;
+  border-bottom: 1px solid black;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.logoPart {
+  width: 200px;
+  height: 70px;
+  padding-top: 21px;
+  display: flex;
+  flex-direction: row;
+}
+
+ul{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-top: 60px;
+  padding-bottom: 25px;
+}
+
+.navItems {
+  padding-left: 50px;
+
+}
+.productShow{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.home{
+  width: 1240px;
+  height: 402px;
+  margin-top: 45px;
+  margin-bottom: 63px;
+  background-color: red;
+  overflow: hidden;
+}
+
+.homeImg{
+  width: 100%;
+  height: auto;
+  margin-top: -200px;
+}
+.typeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1240px;
+  height: 180px;
+  margin-right: 100px;
+}
+.types {
+
+  width:280px;
+  height: 180px;
+
+}
+.typesText{
+  color: red;
+  font-size: 40px;
+  position: absolute;
+  /*padding-top: 80px;
+  padding-left: 80px;*/
+
+z-index: 1;
+width: 100%;
+
+}
+
+.typesImg {
+  width: 100%;
+  filter: grayscale(100%);
+}
+.typesImg:hover{
+  filter: grayscale(0%);
+}
+
+.typesText:hover .typesImg:hover{
+  filter: grayscale(0%);
+}

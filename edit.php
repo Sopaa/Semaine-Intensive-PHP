@@ -20,4 +20,3 @@ $stmt->execute();
 errorHandler($stmt);
 header("Location: details.php?id=".$_POST['id']);
  ?>
- <p></p>
