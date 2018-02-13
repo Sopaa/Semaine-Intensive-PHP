@@ -21,7 +21,8 @@ $request = 'SELECT
 `plaisirDesYeux`,
 `degustation`,
 `origine`,
-`note`
+`note`,
+`stock`
 
 FROM
   `meat`

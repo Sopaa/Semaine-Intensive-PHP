@@ -21,7 +21,8 @@ $request = 'SELECT
 `plaisirDesYeux`,
 `degustation`,
 `origine`,
-`note`
+`note`,
+`stock`
 
 FROM
   `meat`
@@ -60,6 +61,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <label for="degustation"> degustation : <input type="text" name="degustation" value="<?=$row['degustation'] ?>"></label>
     <label for="origine"> origine : <input type="text" name="origine" value="<?=$row['origine'] ?>"></label>
     <label for="note"> note : <input type="text" name="note" value="<?=$row['note'] ?>"></label>
+    <label for="stock"> stock : <input type="text" name="stock" value="<?=$row['stock'] ?>"></label>
 
     <input type="submit" value="Modifier">
 </form>

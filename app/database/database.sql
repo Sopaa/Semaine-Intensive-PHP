@@ -11,7 +11,8 @@ CREATE TABLE meat (
   plaisirDesYeux TEXT,
   degustation TEXT,
   origine VARCHAR(90),
-  note VARCHAR(90)
+  note INT,
+  stock INT
 );
 
 
@@ -29,7 +30,7 @@ hybrides sans cornes (moins de blessures entre individus en élevage intensif et
         'Ses principales caractéristiques sont sa forte concentration en graisses intramusculaires (persillé).',
         'Cette viande reflète les caractéristiques de sa race et de son environnement : robustesse et grands espaces.
         Sa texture souple et moelleuse lui confère une jutosité sans pareil et offre une palette de saveurs aux notes
-        florales et herbacées. Une viande d’une grande élégance !', 'Espagne', './img'
+        florales et herbacées. Une viande d’une grande élégance !', 'Espagne', 4, 7
 ),
   (2,'Blonde de Galice / Dry Aged','Boeuf','./img', 'Chaque bête dispose d’un grand espace pour
 évoluer et ne subit aucun stress durant tout le processus d’élevage, et ce jusqu’à l’abattage.
@@ -42,13 +43,13 @@ Deux facteurs essentiels pour le bien-être de l’animal et nécessaires pour o
    viande au goût unique une chair optimale.',
    'Les amateurs apprécieront son goût légèrement épicé et salin, dû certainement à sa proximité avec l’océan : ces
    animaux se nourrissent exclusivement d’herbe, de trèfles et de plantes qui ne poussent que dans cette zone au
-   climat si particulier.', 'Espagne', './img'
+   climat si particulier.', 'Espagne', 4, 7
   ),
   (3,'Angus Uruguay','Boeuf','./img', 'Acère (sans cornes), l’Angus a été introduite en Irlande vers 1860 avant
 d’être exportée dans le monde entier. Sa robe est uniforme, allant du rouge sombre au noir.', '',
    '',
    'Entrecôte - faux-filet - Rumsteak - Grillés au charbon ou saisie dans une poêle en fonte , cette viande fera
-   le bonheur de tous à un prix tout doux.', 'Uruguay', './img'
+   le bonheur de tous à un prix tout doux.', 'Uruguay', 4, 7
   ),
   (4,'Argentine','Boeuf','./img', 'De tous temps, cette viande a fait la fierté des Argentins. Elle bénéficie
 d''immenses étendues d''herbage qui favorisent considérablement sa croissance et d’un élevage en plein air qui
@@ -57,7 +58,7 @@ lui confère un niveau de qualité incomparable.', '' ,
    et une jutosité incroyable.',
    'En matière de cuisson, les “parrilladas” ou “asados” sont les plus appréciées : ce sont des grillades effectuées
    avec d’énormes morceaux de viande d''environ 800g tranchés dans le filet. Un vrai régal à la "plancha" ou au
-   barbecue pour les vrais amateurs de viande !', 'Argentine', './img'
+   barbecue pour les vrais amateurs de viande !', 'Argentine', 4, 7
   ),
   (5,'Charolaise','Boeuf','./img', 'Aujourd''hui, les effectifs français, répartis dans tous les départements,
 représentent plus de 1,7 millions de vaches. Les qualités bouchères de la Charolaise sont aujourd''hui appréciées
@@ -67,7 +68,7 @@ effectués avec des races locales, comme avec le zébu par exemple.', 'La Charol
 solides. Elle est de couleur blanche tirant parfois vers le crème et pèse en moyenne de 700 à 1.200 kg. Son
 chignon est très large et long, recouvert de poils épais.',
    'Elle fournit une viande d’une grande succulence, avec une présence assez discrète des graisses.',
-   'Elle présente des saveurs animales et héminiques fortes, nettes et prolongées.', 'France', './img'
+   'Elle présente des saveurs animales et héminiques fortes, nettes et prolongées.', 'France', 4, 7
   ),
   (6,'Black Angus USA','Boeuf','./img', 'C’est au coeur des Grandes Plaines des États-Unis que l’Angus américain
 est élevé à l’air libre. Une alimentation contrôlée, composée exclusivement d’herbes, suivi d’un régime de cent
@@ -82,7 +83,7 @@ puisse apparaître sur ses mamelles. Ses muqueuses sont noires et elle est natur
    'Ses saveurs sont très développées, avec une prédominance de gras fondu et d’animalité. Même si les nutritionnistes
    froncent les sourcils, les amateurs de viande en sont fans! Reconnue dans le monde entier pour sa tendreté, sa
    succulence et son goût unique, la Black Angus USA est une viande d’exception très appréciée des connaisseurs.'
-    , 'USA', './img'
+    , 'USA', 4, 7
   ),
   (7,'Limousine','Boeuf','./img', 'Actuellement, la race Limousine est la 2ème race à viande française avec 1 million
 de vaches. Sa renommée actuelle repose sur ses qualités maternelles, sa longévité et sa facilité d''élevage (même
@@ -94,14 +95,14 @@ rose clair.',
    bouchers qui reconnaissent aux carcasses limousines un rendement élevé en viande et en morceaux nobles.',
    'La Limousine offre une gamme complète de saveurs : animalité, gras déployé, impressions herbacées, parfois
    florales.'
-    , 'France', './img'
+    , 'France', 4, 7
   ),
   (8,'Wagyu japonais','Boeuf','./img', 'De robe rouge ou noire, le Wagyu est connu pour sa grande capacité à fixer
 le persillé et le marbré qui est la conséquence d’une alimentation surveillée à base de paille de riz, de mais et
 de levure de bière.', '', '',
    'Le boeuf japonais qualifiée de « caviar de la viande », fait merveille dans toutes sortes de cuisines. On peut
    le griller en steak, l’utiliser pour des plats japonais comme le shabu shabu, le trancher et le frire ou le faire
-   sauter rapidement au wok.', 'Japon', './img'
+   sauter rapidement au wok.', 'Japon', 4, 7
   ),
   (9,'Simmental / Dry Aged','Boeuf','./img', 'Cette qualité de viande se traduit par un élevage de boeufs nourrit
 au grand air dans les alpages avec pour aliments principaux l''herbe et le fourrage. Ces bêtes à tête blanche
@@ -115,7 +116,7 @@ partie blancs.',
    rassir la viande jusqu’à maturation, elle offre une viande de belle qualité et une finesse du grain prononcés,
    des saveurs riches et beaucoup de jutosité.',
    'Avec sa chair rose et fine, elle offre une saveur aromatique et persillée très agréable en bouche. Un pur délice
-         pour tous les amateurs de viande !', 'Espagne', './img'
+         pour tous les amateurs de viande !', 'Espagne', 4, 7
   ),
   (10,'Wagyu australien','Boeuf','./img', 'Le Wagyu a migré depuis quelques dizaines d’années en Australie et en
 Nouvelle Zélande, et en petit nombre aux Etats-Unis. Depuis peu de temps, quelques animaux Wagyu sont implantés
@@ -132,7 +133,7 @@ moyenne, autour de 600 kg, et une silhouette massive avec une encolure forte.',
    des acides gras essentiels, donc moins de graisses saturées qu’un autre bœuf. Qualifiée de « caviar de la
    viande », cette chair tendre marbrée serait due à une alimentation surveillée, des massages au saké ou à
    la bière , de la musique classique pour ne pas stresser les bêtes … Mythe ou réalité ? Il faut l’avoir
-   goûté au moins une fois dans sa vie pour pouvoir en juger !', 'France', './img'
+   goûté au moins une fois dans sa vie pour pouvoir en juger !', 'France', 4, 7
   ),
   (11,'Veau','Veau','./img', 'Les Veaux proviennent de petites exploitations, ils sont élevés jusqu''à un âge
 compris entre 3 et 5 mois avec le lait maternel tété directement au pis de la vache, 2 fois par jour.
@@ -145,7 +146,7 @@ doit être souple, la couleur pâle, le gras blanc et le réseau conjonctif peu 
    les amateurs d’escalopes moelleuses ou de côtes à la crème…',
    'La viande de nos veaux se distingue par sa couleur blanche à rosée avec un grain de viande très fin et persillé,
    et un gras blanc satiné et onctueux. Très tendre, sa cuisson révèle tout son fondant et sa saveur.', 'France',
-   './img'
+   4, 7
   ),
   (12,'Agneau','Agneau','./img', 'Tous les agneaux nés en France sont élevés avec leur mère pendant 4 à 5 semaines
 et sont nourris exclusivement de lait. Puis leur alimentation varie selon les régions et les systèmes d''élevage.
@@ -158,17 +159,17 @@ le gras interstitiel en petite quantité. Pour les gigots, nous préférons en g
 jeunes femelles, dont la viande est plus douce que celle des jeunes mâles non castrés.',
    'La couleur de son gras est tendrement nacrée, celle de sa chair délicatement rosée.',
    'La viande de nos agneaux est d’une grande finesse gustative : goûteuse, soyeuse, raffinée et délicieusement
-   fondante.', 'France', './img'
+   fondante.', 'France', 4, 7
   ),
   (13,'Porc noir de Bigorre','Porc','./img', 'Les racines du Porc noir de Bigorre remonte à l’époque romaine, il a
 failli disparaître avant de revenir à la mode il y peu. Elevé dans son milieu naturel toute l’année avec moins
 de 20 porcs à l’hectare il se nourrit d’herbe de châtaignes et de glands.  ', '', '',
    'Sa viande persillée et au goût parfumé de noisette donne à cette viande toutes ses lettres noblesse.
-   Un produit rare à découvrir ou redécouvrir.', 'France', './img'
+   Un produit rare à découvrir ou redécouvrir.', 'France', 4, 7
   ),
   (14,'Saucisson de Lyon','Charcuterie','./img', ' ', '', 'Pièce incontournable de la charcuterie lyonnaise et
 française, redécouvrez le Saucisson de Lyon pistaché ',
-   '', 'France', './img'
+   '', 'France', 4, 7
   ),
   (15,'Le Porc noir de Bigorre - Padouen','Charcuterie','./img', '', '', 'Le porc noir de Bigorre offre une viande
 sans pareille, fondante, colorée et savoureuse.
@@ -177,10 +178,10 @@ Les rillettes Padouen seront appréciées par les gourmets à la recherche de sa
    sauvegardée grâce à un petit nombre d’éleveurs attachés à la survie de ce fleuron de leur culture.
    C’est au cœur des Pyrénées, en Bigorre, que ces porcs rustiques sont choyés selon un cahier des charges détaillé.
    Elevé minimum 12 mois en plein air, le porc noir de Bigorre se nourrit de glands, de châtaignes, d’herbe et reçoit
-   un complément de céréales, de pois et de soja sans organisme génétiquement modifié (OGM).', 'France', './img'
+   un complément de céréales, de pois et de soja sans organisme génétiquement modifié (OGM).', 'France', 4, 7
   ),
   (16,'Boudins','Charcuterie','./img', ' ', '', 'Elaborés dans les règles de l’art, les boudins blancs ou noirs
 se dégustent nature ou aux accords audacieux ',
-   '', 'France', './img'
+   '', 'France', 4, 7
   );
 

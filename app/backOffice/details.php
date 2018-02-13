@@ -18,7 +18,8 @@ $request = 'SELECT
 `plaisirDesYeux`,
 `degustation`,
 `origine`,
-`note`
+`note`,
+`stock`
 
 FROM
   `meat`
@@ -55,6 +56,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <td><?=$row['degustation']?></td>
     <td><?=$row['origine']?></td>
     <td><?=$row['note']?></td>
+    <td><?=$row['stock']?></td>
     <td><a href="details.php?id=<?=$row['id']?>"><?=$row['nom']?></a></td>
     <td>
         <a href="delete.php?id=<?=$row['id']?>"> Supprimer </a>
