@@ -38,7 +38,7 @@ Deux facteurs essentiels pour le bien-être de l’animal et nécessaires pour o
    pattes sont plus claires et ses muqueuses sont rosées. Ses cornes sont courtes, claires à pointe noire. C''est
    une race de grande taille, 135-150 cm au garrot.',
    'Ses principales caractéristiques sont sa forte concentration en graisses intramusculaires (persillé). Grâce à
-   la technique du « dry age », qui consiste à faire rassir la viande à maturation, la maison Metzger garantit à cette
+   la technique du « dry age », qui consiste à faire rassir la viande à maturation, la maison garantit à cette
    viande au goût unique une chair optimale.',
    'Les amateurs apprécieront son goût légèrement épicé et salin, dû certainement à sa proximité avec l’océan : ces
    animaux se nourrissent exclusivement d’herbe, de trèfles et de plantes qui ne poussent que dans cette zone au
@@ -139,7 +139,7 @@ compris entre 3 et 5 mois avec le lait maternel tété directement au pis de la 
 Le lait maternel doit représenter au minimum 85% de l’alimentation du veau. Il n’a pas accès à l’auge
 et peut recevoir en finition, de façon limitée et dans les conditions strictement définies, un aliment
 complémentaire d''allaitement, référencé et contrôlé.', 'La viande de veau de lait est issue des troupeaux
-de race à viande. Chez Metzger Frères, nous excluons les animaux trop âgés et les veaux maigres. La fibre
+de race à viande. Nous excluons les animaux trop âgés et les veaux maigres. La fibre
 doit être souple, la couleur pâle, le gras blanc et le réseau conjonctif peu développé.',
    'Leur alimentation quasiment exclusivement à base de lait leur donne cette viande rosée clair qui comblera
    les amateurs d’escalopes moelleuses ou de côtes à la crème…',
@@ -151,8 +151,8 @@ doit être souple, la couleur pâle, le gras blanc et le réseau conjonctif peu 
 et sont nourris exclusivement de lait. Puis leur alimentation varie selon les régions et les systèmes d''élevage.
 On distingue deux grands régimes alimentaires : celui des agneaux d''herbe nourris aux fourrages verts et celui
 des agneaux de bergerie nourris de fourrages conservés (foin, paille, maïs ensilé). Leur aliment de complément
-est généralement constitué de tourteaux de soja auxquels s''ajoutent des vitamines et des minéraux.', 'Chez
-Metzger frères, nous sélectionnons des agneaux jeunes, nourris 3 mois au lait maternel, puis avec une ration
+est généralement constitué de tourteaux de soja auxquels s''ajoutent des vitamines et des minéraux.', 'Nous sélectionnons
+des agneaux jeunes, nourris 3 mois au lait maternel, puis avec une ration
 comportant du foin et des céréales. La couleur doit être belle, éclatante, la graisse de couverture modérée,
 le gras interstitiel en petite quantité. Pour les gigots, nous préférons en général qu’ils soient issus de
 jeunes femelles, dont la viande est plus douce que celle des jeunes mâles non castrés.',
@@ -170,7 +170,7 @@ de 20 porcs à l’hectare il se nourrit d’herbe de châtaignes et de glands. 
 française, redécouvrez le Saucisson de Lyon pistaché ',
    '', 'France', './img'
   ),
-  (15,'Le Porc noir de Bigorre - Padouen','Charcuterie','./img', ' ', '', 'Le porc noir de Bigorre offre une viande
+  (15,'Le Porc noir de Bigorre - Padouen','Charcuterie','./img', '', '', 'Le porc noir de Bigorre offre une viande
 sans pareille, fondante, colorée et savoureuse.
 Les rillettes Padouen seront appréciées par les gourmets à la recherche de saveurs aromatiques ',
    'En 1981, alors qu’elle était menacée d’extinction, la race très ancienne du porc Noir de Bigorre a pu être
