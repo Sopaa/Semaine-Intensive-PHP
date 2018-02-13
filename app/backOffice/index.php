@@ -44,7 +44,7 @@ $stmt->execute();
     <tr>
         <td><?=$row['id']?></td>
         <td><?=$row['nom']?></td>
-        <td><a href="details.php?id=<?=$row['id']?>"><?=$row['nom']?></a></td>
+        <td><a href="details.php?id=<?=$row['id']?>"></a></td>
         <td>
             <a href="delete.php?id=<?=$row['id']?>"> Supprimer </a>
             <a href="edit.php?id=<?=$row['id']?>"> Modifier </a>
