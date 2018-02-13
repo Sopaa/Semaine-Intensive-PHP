@@ -21,6 +21,7 @@
     <label for="degustation"> degustation : <input type="text" name="degustation"></label>
     <label for="origine"> origine : <input type="text" name="origine"></label>
     <label for="note"> note : <input type="text" name="note"></label>
+    <label for="stock"> stock : <input type="number" name="stock"></label>
 
     <input type="submit" value="Ajouter">
 </form>

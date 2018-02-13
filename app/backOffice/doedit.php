@@ -22,7 +22,8 @@ SET
 `plaisirDesYeux` = :plaisirDesYeux,
 `degustation` = :degustation,
 `origine` = :origine,
-`note` = :note
+`note` = :note,
+`stock` = :stock
 
 WHERE
 
@@ -41,7 +42,8 @@ $stmt->bindValue(':plaisirDesYeux', $_POST['plaisirDesYeux']);
 $stmt->bindValue(':degustation', $_POST['degustation']);
 $stmt->bindValue(':origine', $_POST['origine']);
 $stmt->bindValue(':note', $_POST['note']);
+$stmt->bindValue(':stock', $_POST['stock']);
 $stmt->execute();
 
-
+header('Location: index.php');
 
