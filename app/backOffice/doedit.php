@@ -35,6 +35,10 @@ id = :id
 $uploadfile = 'img/'.$_FILES['image']['name'];
 move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
 
+if($_FILES['image']['size'] > 1000){
+    throw new Exception('Fichier trop volumineux');
+}
+
 $stmt = $connection->prepare($request);
 $stmt->bindValue(':id', $_POST['id']);
 $stmt->bindValue(':nom', $_POST['nom']);
