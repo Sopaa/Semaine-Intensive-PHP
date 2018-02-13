@@ -23,3 +23,4 @@ id = :id
 $stmt = $connection->prepare($request);
 $stmt->bindValue(':id', $_POST['id']);
 $stmt->execute();
+header('Location: index.php');

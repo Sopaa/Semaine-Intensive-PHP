@@ -3,13 +3,10 @@
  * Created by PhpStorm.
  * User: ayshiff
  * Date: 13/02/2018
- * Time: 09:56
+ * Time: 10:57
  */
 
-
-
 require_once "connexion.php";
-
 
 $request = 'SELECT
 `id`,
@@ -25,19 +22,13 @@ $request = 'SELECT
 
 FROM
   `meat`
-WHERE
-`id` = :id  
-
 ;';
 
 $stmt = $connection->prepare($request);
-$stmt->bindValue(':id', $_GET['id']);
 $stmt->execute();
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
 
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -47,12 +38,25 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <title>Document</title>
 </head>
 <body>
-<form action="dodelete.php" method="post">
-    <label for="id"> id : <input type="text" name="id" value="<?=$row['id'] ?>"></label>
-    <label for=""> Êtes-vous sûr de vouloir supprimer <?=$row['nom'] ?> ? </label>
+
+<?php while(false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
+
+    <tr>
+        <td><?=$row['id']?></td>
+        <td><?=$row['nom']?></td>
+        <td><a href="details.php?id=<?=$row['id']?>"><?=$row['nom']?></a></td>
+        <td>
+            <a href="delete.php?id=<?=$row['id']?>"> Supprimer </a>
+            <a href="edit.php?id=<?=$row['id']?>"> Modifier </a>
+        </td>
+    </tr>
 
 
-    <input type="submit" value="Supprimer">
-</form>
+<?php endwhile;?>
 
 </body>
+</html>
+
+
+
+
