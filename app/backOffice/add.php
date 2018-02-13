@@ -7,13 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-<form action="doadd.php" method="post">
+<form action="doadd.php" method="post" enctype="multipart/form-data">
     <label for="id"> id : <input type="text" name="id"></label>
     <label for="nom"> nom : <input type="text" name="nom"></label>
     <label for="categorie"> categorie : <input type="text" name="categorie"></label>
 
 
-    <label for="image" class="dropzone"> image : <input type="text" name="image"></label>
+    <label for="image" class="dropzone"> image : <input type="file" name="image"></label>
 
     <label for="elevage"> elevage : <input type="text" name="elevage"></label>
     <label for="morphologie"> morphologie : <input type="text" name="morphologie"></label>
