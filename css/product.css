@@ -1,6 +1,136 @@
+@font-face {
+  font-family: "playfair";
+  src: url("../fonts/PlayfairDisplay-Regular.ttf");
+}
+
+@font-face {
+  font-family: "avenir";
+  src: url("../fonts/Avenir.ttc");
+}
+
+body {
+  background-color: #000;
+  color: #FFF;
+  font-family: "playfair";
+}
+
+.productTitle {
+  color: white;
+  text-align: center;
+  font-family: "playfair";
+  font-size: 36px;
+  margin-top: 35px;
+}
+
+.mainContainer {
+  width: 1153px;
+  height: 657px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftContainer {
+  width: 50%;
+  height: auto;
+  padding-left: 67px;
+  padding-top: 58px;
+}
+
+.note {
+  font-size: 30px;
+  font-family: "avenir";
+}
+
+.productImg {
+  width: 466px;
+  height: 350px;
+}
+
+.cartContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cart {
+  width: 70px;
+  height: auto;
+  padding-left: 30px;
+  color: white;
+}
+
+.addCart {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  width: 130px;
+}
+
+.addCart:hover {
+  background-color: #9B9B9B;
+  color: #000;
+  transition: 0.3s ease;
+}
+
+.addCart:focus {
+  outline: 0;
+}
+
+.priceContainer {
+  position: absolute;
+  top: 72%;
+  left: 40%;
+}
+
+.price {
+  font-size: 36px;
+  font-family: "avenir";
+}
+
+.rightContainer {
+  width: 50%;
+  height: auto;
+  padding-right: 67px;
+  text-align: center;
+  padding-top: 58px;
+}
+
+.productDescription {
+  width: 467px;
+  height: 135px;
+}
+
+.descriptionTitle {
+  font-family: "playfair";
+  font-size: 20px;
+}
+
+.descriptionText {
+  padding-top: 5px;
+  font-family: "avenir";
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.subContainer {
+  width: 385px;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtitle {
+  color: white;
+  font-family: "playfair";
+  font-size: 36px;
+}
+
 .socialContainer {
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 90%;
+  margin-left: 40%;
   width: 188px;
   height: 36px;
   display: flex;
