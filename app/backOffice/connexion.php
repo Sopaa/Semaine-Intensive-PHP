@@ -9,7 +9,7 @@
 $host = 'localhost';
 $dbname = 'SemaineIntensivePHP';
 $username = 'root';
-$password = '';
+$password = 'root';
 
 try {
     $connection = new PDO('mysql:host='.$host.';dbname='.$dbname.';', $username, $password);

@@ -54,13 +54,13 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <title>Document</title>
 </head>
 <body>
-<form action="doedit.php" method="post">
+<form action="doedit.php" method="post" enctype="multipart/form-data">
     <label for="id"> id : <input type="text" name="id" value="<?=$row['id'] ?>"></label>
     <label for="nom"> nom : <input type="text" name="nom" value="<?=$row['nom'] ?>"></label>
     <label for="categorie"> categorie : <input type="text" name="categorie" value="<?=$row['categorie'] ?>"></label>
 
 
-    <label for="image"> image : <input type="file" name="image" value="<?=$row['image'] ?>"></label>
+    <label for="image"> image : <input type="file" name="image" value="<?=$row['image']['name'] ?>"></label>
 
     <label for="elevage"> elevage : <input type="text" name="elevage" value="<?=$row['elevage'] ?>"></label>
     <label for="morphologie"> morphologie : <input type="text" name="morphologie" value="<?=$row['morphologie'] ?>"></label>

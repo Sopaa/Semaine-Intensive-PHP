@@ -32,11 +32,14 @@ id = :id
 
 ;';
 
+$uploadfile = 'img/'.$_FILES['image']['name'];
+move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
+
 $stmt = $connection->prepare($request);
 $stmt->bindValue(':id', $_POST['id']);
 $stmt->bindValue(':nom', $_POST['nom']);
 $stmt->bindValue(':categorie', $_POST['categorie']);
-$stmt->bindValue(':image', $_POST['image']);
+$stmt->bindValue(':image', $_FILES['image']['name']);
 $stmt->bindValue(':elevage', $_POST['elevage']);
 $stmt->bindValue(':morphologie', $_POST['morphologie']);
 $stmt->bindValue(':plaisirDesYeux', $_POST['plaisirDesYeux']);
