@@ -36,7 +36,6 @@ $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -48,7 +47,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 </head>
 <body>
 <form action="doedit.php" method="post">
-    <label for="id"> id : <input type="text" name="id" value="<?=$GET_['id'] ?>"></label>
+    <label for="id"> id : <input type="text" name="id" value="<?=$row['id'] ?>"></label>
     <label for="nom"> nom : <input type="text" name="nom" value="<?=$row['nom'] ?>"></label>
     <label for="categorie"> categorie : <input type="text" name="categorie" value="<?=$row['categorie'] ?>"></label>
 
