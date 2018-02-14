@@ -58,10 +58,10 @@ id = :id
     $uploadfile = 'img/'.$_FILES['image']['name'];
     move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
 
-    /* Si l'image a un poids supérieur à 1000 octets, on renvoit une erreur*/
+    /* Si l'image a un poids supérieur à 1000 octets, on renvoit une erreur
     if($_FILES['image']['size'] > 1000) {
         throw new Exception('Fichier trop volumineux');
-    }
+    }*/
 }
 
 
