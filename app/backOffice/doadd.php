@@ -8,6 +8,7 @@
 
 require_once "connexion.php";
 
+/* On vérifie que tous les champs sont bien remplis*/
 if (empty($_POST['id']) || empty($_POST['nom']) || empty($_POST['categorie']) || empty($_FILES['image']['name'])||
     empty($_POST['elevage']) || empty($_POST['morphologie']) || empty($_POST['plaisirDesYeux']) ||
     empty($_POST['degustation']) || empty($_POST['origine']) || empty($_POST['note'])|| empty($_POST['stock'])) {
@@ -23,7 +24,7 @@ foreach($required as $field) {
 }
 */
 
-
+/* Requête d'ajout dans la db*/
 $request = "INSERT INTO
 `meat` 
 (`id`, `nom`, `categorie`, `image`, `elevage`, `morphologie`, `plaisirDesYeux`, `degustation`, `origine`,`prix`, `note`, `stock`)
@@ -32,9 +33,11 @@ VALUES
 
 ;";
 
+/* Upload de l'image dans le dossier img */
 $uploadfile = 'img/'.$_FILES['image']['name'];
 move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
 
+/* On bind chaque valeur pour les insérer dans la requête INSERT INTO */
 $stmt = $connection->prepare($request);
 $stmt->bindValue(':id', htmlentities($_POST['id']));
 $stmt->bindValue(':nom', htmlentities($_POST['nom']));
@@ -50,4 +53,5 @@ $stmt->bindValue(':note', htmlentities($_POST['note']));
 $stmt->bindValue(':stock', htmlentities($_POST['stock']));
 $stmt->execute();
 
+/* Retour à l'index*/
 header('Location: index.php');
