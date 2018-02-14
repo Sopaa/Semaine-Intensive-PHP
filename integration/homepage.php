@@ -41,26 +41,26 @@
     </div>
     <div class="typeContainer">
 
-      <a href="#" class="typesLink">
+      <a href="./categories.php" class="typesLink">
         <div class="types">
 
           <p class="typesText">Boeuf</p><img src="../img/Boeuf.jpg" alt="" class="typesImg">
         </div>
       </a>
-      <a href="#" class="typesLink">
+      <a href="./categories.php" class="typesLink">
         <div class="types">
 
           <p class="typesText">Veau</p><img src="../img/veau.jpg" alt="" class="typesImg">
         </div>
       </a>
 
-      <a href="#" class="typesLink">
+      <a href="./categories.php" class="typesLink">
         <div class="types">
 
             <p class="typesText">Agneau</p><img src="../img/agneau.jpg" alt="" class="typesImg">
         </div>
         </a>
-        <a href="#" class="typesLink"><div class="types">
+        <a href="./categories.php" class="typesLink"><div class="types">
 
             <p class="typesText">Porc</p><img src="../img/Porc.jpg" alt="" class="typesImg">
           </div>
