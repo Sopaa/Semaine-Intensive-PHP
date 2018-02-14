@@ -1,37 +1,74 @@
-<?php
-require_once "functions.php";
-require_once "connexion.php";
-$sql = "SELECT
-  id,
-  nom,
-  type
-FROM
-  ingredient
-;";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
-errorHandler($stmt);
-head("Liste des ingredients", false);
-?>
+<!DOCTYPE html>
+<html>
 
-<a href="add.php">+ Ajouter</a>
-<table>
-    <tr>
-        <th>id</th>
-        <th>nom</th>
-        <th>type</th>
-        <th>action</th>
-    </tr>
-    <?php while(false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
-    <tr>
-        <td><?=$row["id"]?></td>
-        <td><a href="details.php?id=<?=$row["id"]?>"><?=$row["nom"]?></a></td>
-        <td><?=$row["type"]?></td>
-        <td>
-            <a href="delete.php?id=<?=$row["id"]?>">Delete</a>
-            <a href="edit.php?id=<?=$row["id"]?>">Update</a>
-        </td>
-    </tr>
-    <?php endwhile;?>
-</table>
-<?php foot();?>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="meatLogo.ico">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="../img/ViandeLogo.png">
+  <title>Meat</title>
+</head>
+
+<body>
+  <div class="header">
+    <nav>
+      <a href="index.php"><div class="logoPart">
+        <img class="navLogo" src="img/meatLogo.png" alt="Logo">
+        <p class="navTitle"> | Meat.</p>
+      </div>
+      </a>
+      <ul>
+        <a href="#" class="navLink">
+          <li class="navItems">Nos Viandes</li>
+        </a>
+        <a href="#" class="navLink">
+          <li class="navItems">Nos Charcuteries</li>
+        </a>
+        <a href="#" class="navLink">
+          <li class="navItems">Mon Compte</li>
+        </a>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="productShow">
+    <div class="home">
+      <img class="homeImg" src="img/viande.jpeg" alt="">
+    </div>
+    <div class="typeContainer">
+
+      <a href="#" class="typesLink">
+        <div class="types">
+
+          <p class="typesText">Boeuf</p><img src="img/Boeuf.jpg" alt="" class="typesImg">
+        </div>
+      </a>
+      <a href="#" class="typesLink">
+        <div class="types">
+
+          <p class="typesText">Veau</p><img src="img/veau.jpg" alt="" class="typesImg">
+        </div>
+      </a>
+
+      <a href="#" class="typesLink">
+        <div class="types">
+
+            <p class="typesText">Agneau</p><img src="img/agneau.jpg" alt="" class="typesImg">
+        </div>
+        </a>
+        <a href="#" class="typesLink"><div class="types">
+
+            <p class="typesText">Porc</p><img src="img/Porc.jpg" alt="" class="typesImg">
+          </div>
+        </a>
+    </div>
+  </div>
+
+</body>
+
+</html>
