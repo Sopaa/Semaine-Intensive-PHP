@@ -25,11 +25,11 @@ $stmt = $connection->prepare($request);
 
 $stmt->bindValue(':id', htmlentities($_GET['id']));
 
-if($_GET['stock']-1 <= 0){
+/*if($_GET['stock']-1 <= 0){
     $stmt->bindValue(':stock', htmlentities($_GET['stock']));
-} else {
+} else {*/
     $stmt->bindValue(':stock', htmlentities($_GET['stock'])-1);
-}
+/*}*/
 $stmt->execute();
 
 header('Location: categories.php');
