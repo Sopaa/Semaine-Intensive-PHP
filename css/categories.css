@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "playfair";
+  src: url("../fonts/PlayfairDisplay-Regular.ttf");
+}
+
+@font-face {
+  font-family: "avenir";
+  src: url("../fonts/Avenir.ttc");
+}
+
+body {
+  background-image: url(../img/bgd_categ.png);
+  background-position: fixed;
+}
+
+.header {
+  margin-left: 100px;
+  margin-right: 100px;
+  border-bottom: 1px solid black;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.navTitle {
+  font-family: "playfair";
+  font-size: 36px;
+  color: #000;
+}
+
+.logoPart {
+  width: 200px;
+  height: 70px;
+  padding-top: 21px;
+  display: flex;
+  flex-direction: row;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-top: 60px;
+  padding-bottom: 25px;
+}
+
+.navItems {
+  padding-left: 50px;
+  font-family: "playfair";
+  color: #000;
+  font-family: 20px;
+}
+
+.socialContainer {
+  margin-top: 2%;
+  margin-left: 40%;
+  width: 188px;
+  height: 36px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 10px;
+  font-family: "playfair";
+  font-size: 14px;
+}
+
+.categoriesContainer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.categoriesName {
+  color: black;
+  font-family: "avenir";
+  font-size: 18px;
+}
+
+.categoriesItems {
+  width: 20%;
+  margin: auto;
+  padding: 14px;
+}
+
+.categoriesImg {
+  width: 275px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.categoriesImg:hover {
+  filter: grayscale(100%);
+  cursor: pointer;
+}
+
+.foodClass {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.btn-all, .btn-filter {
+  background: transparent;
+  border: 1px solid black;
+  color: black;
+  font-size: 14px;
+  font-family: "avenir";
+  padding: 10px;
+  width: 100px;
+  margin: 10px;
+}
+
+.btn-all:hover, .btn-filter:hover {
+  background-color: black;
+  color: white;
+  transition: 0.5 ease;
+  cursor: pointer;
+}
