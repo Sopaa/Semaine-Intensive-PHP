@@ -10,7 +10,30 @@
 
 require_once "connexion.php";
 
-$request = 'UPDATE
+
+if(empty($_FILES['image']['name'])){
+    $request = 'UPDATE
+`meat`
+SET 
+`id` = :id,
+`nom` = :nom,
+`categorie` = :categorie,
+`elevage` = :elevage,
+`morphologie` = :morphologie,
+`plaisirDesYeux` = :plaisirDesYeux,
+`degustation` = :degustation,
+`origine` = :origine,
+`prix` = :prix,
+`note` = :note,
+`stock` = :stock
+
+WHERE
+
+id = :id
+
+;';
+} else {
+    $request = 'UPDATE
 `meat`
 SET 
 `id` = :id,
@@ -32,18 +55,25 @@ id = :id
 
 ;';
 
-$uploadfile = 'img/'.$_FILES['image']['name'];
-move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
+    $uploadfile = 'img/'.$_FILES['image']['name'];
+    move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
 
-if($_FILES['image']['size'] > 1000){
-    throw new Exception('Fichier trop volumineux');
+    if($_FILES['image']['size'] > 1000) {
+        throw new Exception('Fichier trop volumineux');
+    }
 }
+
+
 
 $stmt = $connection->prepare($request);
 $stmt->bindValue(':id', $_POST['id']);
 $stmt->bindValue(':nom', $_POST['nom']);
 $stmt->bindValue(':categorie', $_POST['categorie']);
-$stmt->bindValue(':image', $_FILES['image']['name']);
+
+if(!empty($_FILES['image']['name'])) {
+    $stmt->bindValue(':image', $_FILES['image']['name']);
+}
+
 $stmt->bindValue(':elevage', $_POST['elevage']);
 $stmt->bindValue(':morphologie', $_POST['morphologie']);
 $stmt->bindValue(':plaisirDesYeux', $_POST['plaisirDesYeux']);
