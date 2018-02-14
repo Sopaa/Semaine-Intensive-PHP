@@ -1,0 +1,13 @@
+body{
+  background-image: url(../img/saucisson.jpg);
+  background-size: 1440px 850px;
+}
+.mid{
+  width: min-content;
+  height: min-content;
+  margin:auto;
+}
+.logo{
+  width: 117px;
+  height: 153px;
+}

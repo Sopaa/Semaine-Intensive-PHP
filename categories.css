@@ -1,0 +1,42 @@
+.header {
+  margin-left: 100px;
+  margin-right: 100px;
+  border-bottom: 1px solid black;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.navTitle {
+  font-family: "playfair";
+  font-size: 36px;
+  color: #fff;
+}
+
+.logoPart {
+  width: 200px;
+  height: 70px;
+  padding-top: 21px;
+  display: flex;
+  flex-direction: row;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-top: 60px;
+  padding-bottom: 25px;
+}
+
+.navItems {
+  padding-left: 50px;
+  font-family: "playfair";
+  color: #fff;
+  font-family: 20px;
+}

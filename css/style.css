@@ -29,14 +29,17 @@ nav {
   font-family: "playfair";
   font-size: 36px;
   color: #fff;
+  margin-bottom: 6px;
+  margin-left: 5px;
 }
 
 .logoPart {
-  width: 200px;
+  width: max-content;
   height: 70px;
   padding-top: 21px;
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
 }
 
 ul {
@@ -83,7 +86,13 @@ ul {
   height: 180px;
   margin-right: 100px;
 }
-
+.spacer{
+  background-color: #FFF;
+  height: 1px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .types {
   width: 280px;
   height: 180px;
@@ -108,5 +117,5 @@ ul {
 
 .types:hover> .typesImg{
   filter: grayscale(0%);
-  transition: 0.3s ease; 
+  transition: 0.3s ease;
 }
