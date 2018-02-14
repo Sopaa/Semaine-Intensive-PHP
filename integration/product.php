@@ -66,9 +66,16 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       <img id="image" class="productImg" src="../app/backOffice/img/<?=$row['image']?>" alt="">
       <div class="cartContainer">
         <img class="cart" src="../img/panier.png" alt="">
+          <?php if($row['stock'] > 0) { ?>
           <a href="addCard.php?id=<?=$row['id'] ?>&stock=<?=$row['stock']?> ">
         <button class="addCart" type="button" name="button">Ajouter au panier</button>
               </a>
+          <?php } else { ?>
+              <a href="">
+                  <button class="addCart" type="button" name="button">Ajouter au panier</button>
+                  <p style="color: red; font-size: 14px; margin-top: 8px;"> Plus de produit en stock !</p>
+              </a>
+          <?php }  ?>
       </div>
       <div class="priceContainer">
         <p id="prix" class="price"><?=$row['prix']?> €/kg</p>
