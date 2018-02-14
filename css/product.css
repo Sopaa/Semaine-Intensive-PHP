@@ -126,6 +126,7 @@ body {
   color: white;
   font-family: "playfair";
   font-size: 36px;
+  z-index: 2;
 }
 
 .socialContainer {

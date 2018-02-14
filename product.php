@@ -1,3 +1,42 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ayshiff
+ * Date: 13/02/2018
+ * Time: 11:08
+ */
+
+require_once "./app/backOffice/connexion.php";
+
+$request = 'SELECT
+`id`,
+`nom`,
+`categorie`,
+`image`,
+`elevage`,
+`morphologie`,
+`plaisirDesYeux`,
+`degustation`,
+`origine`,
+`prix`,
+`note`,
+`stock`
+
+FROM
+  `meat`
+WHERE
+`id` = :id  
+
+;';
+
+$stmt = $connection->prepare($request);
+$stmt->bindValue(':id', $_GET['id']);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+?>
+
+
 <html>
 
 <head>
@@ -11,47 +50,61 @@
 </head>
 
 <body>
-  <h1 id="categorie" class="productTitle">sivc</h1>
+  <h1 id="categorie" class="productTitle"><?=$row['categorie']?></h1>
 
   <div class="mainContainer">
 
     <div class="leftContainer">
       <div class="subContainer">
-        <h2 id="nom" class="subtitle">berhfguy</h2>
-        <p id="note" class="note">3/5</p>
+        <h2 id="nom" class="subtitle"><?=$row['nom'] ?></h2>
+        <p id="note" class="note"><?=$row['note']?>/5</p>
       </div>
-      <img id="image" class="productImg" src="" alt="">
+      <img id="image" class="productImg" src="./app/backOffice/img/<?=$row['image']?>" alt="">
       <div class="cartContainer">
         <img class="cart" src="img/panier.png" alt="">
         <button class="addCart" type="button" name="button">Ajouter au panier</button>
       </div>
       <div class="priceContainer">
-        <p id="prix" class="price">78</p>
+        <p id="prix" class="price"><?=$row['prix']?> €/kg</p>
       </div>
     </div>
 
     <div class="rightContainer">
+
+        <?php if(!empty($row['plaisirDesYeux'])) {?>
       <div class="productDescription">
         <h2 class="descriptionTitle">Plaisir des yeux</h2>
-        <p id="plaisirdesyeux" class="descriptionText">vcjqfgyz</p>
+        <p id="plaisirdesyeux" class="descriptionText"><?=$row['plaisirDesYeux']?></p>
       </div>
+        <?php } ?>
+
+        <?php if(!empty($row['elevage'])) {?>
       <div class="productDescription">
         <h2 class="descriptionTitle">Elevage</h2>
-        <p id="elevage" class="descriptionText">fueqkfhq</p>
+        <p id="elevage" class="descriptionText"><?=$row['elevage']?></p>
       </div>
+        <?php } ?>
+
+        <?php if(!empty($row['degustation'])) {?>
       <div class="productDescription">
         <h2 class="descriptionTitle">Degustation</h2>
-        <p id="degustation" class="descriptionText">zfqufhzf</p>
+        <p id="degustation" class="descriptionText"><?=$row['degustation']?></p>
       </div>
+        <?php } ?>
+
+        <?php if(!empty($row['origine'])) {?>
       <div class="productDescription">
         <h2 class="descriptionTitle">Origine</h2>
-        <p id="origine" class="descriptionText">sqeiflhqz</p>
+        <p id="origine" class="descriptionText"><?=$row['origine']?></p>
       </div>
+        <?php } ?>
+
       <div class="socialContainer">
         <a href="#"><img class="socialImg" src="img/amazon.png" alt="Amazon"></a>
         <a href="#"><img class="socialImg" src="img/facebook.png" alt="Facebook"></a>
         <a href="#"><img class="socialImg" src="img/twitter.png" alt="Twitter"></a>
       </div>
+
 
     </div>
 
