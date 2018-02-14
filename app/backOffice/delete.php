@@ -10,7 +10,7 @@
 
 require_once "connexion.php";
 
-
+/* Requête */
 $request = 'SELECT
 `id`,
 `nom`,
@@ -32,6 +32,7 @@ WHERE
 
 ;';
 
+/* On récupère l'id en get qu'on passe dans la requête*/
 $stmt = $connection->prepare($request);
 $stmt->bindValue(':id', $_GET['id']);
 $stmt->execute();

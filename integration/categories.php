@@ -8,6 +8,7 @@
 
 require_once "../app/backOffice/connexion.php";
 
+/* Requête pour récupérer tous les éléments de la table meat */
 $request = 'SELECT
 `id`,
 `nom`,
@@ -78,6 +79,7 @@ $stmt->execute();
 
   <div class="categoriesContainer">
 
+<!-- Boucle pour l'affichage des divs -->
       <?php while(false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
 
     <div class="categoriesItems" data-category="<?=$row['categorie']?>">

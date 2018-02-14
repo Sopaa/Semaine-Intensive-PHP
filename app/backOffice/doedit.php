@@ -10,7 +10,7 @@
 
 require_once "connexion.php";
 
-
+/* Si l'utilisateur ne rentre pas d'image, on garde celle existante, sinon on utilise celle qu'il a rentré */
 if(empty($_FILES['image']['name'])){
     $request = 'UPDATE
 `meat`
@@ -58,6 +58,7 @@ id = :id
     $uploadfile = 'img/'.$_FILES['image']['name'];
     move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
 
+    /* Si l'image a un poids supérieur à 1000 octets, on renvoit une erreur*/
     if($_FILES['image']['size'] > 1000) {
         throw new Exception('Fichier trop volumineux');
     }
@@ -84,5 +85,6 @@ $stmt->bindValue(':note', htmlentities($_POST['note']));
 $stmt->bindValue(':stock', htmlentities($_POST['stock']));
 $stmt->execute();
 
+/* Retour à l'index*/
 header('Location: index.php');
 

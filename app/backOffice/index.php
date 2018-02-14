@@ -8,6 +8,7 @@
 
 require_once "connexion.php";
 
+/* On sélectionne tous les élement de la table meat*/
 $request = 'SELECT
 `id`,
 `nom`,
@@ -51,6 +52,7 @@ $stmt->execute();
     <div class="itemsContainer">
 
 <?php
+/* Non fonctionnel pour le moment => renvoit une erreur si edit ou add retourne index.php avec une erreur dans l'URL*/
 if (isset($_GET['error'])) {
     ?>
     echo 'error';
@@ -59,7 +61,7 @@ if (isset($_GET['error'])) {
 }
 ?>
 
-
+        <!-- Tant que $row n'est pas nul, retourne un tableau indexé par le nom de la colonne  -->
         <?php while(false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
 
 

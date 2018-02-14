@@ -8,6 +8,7 @@
 
 require_once "../app/backOffice/connexion.php";
 
+/* requête */
 $request = 'SELECT
 `id`,
 `nom`,
@@ -30,6 +31,7 @@ WHERE
 ;';
 
 $stmt = $connection->prepare($request);
+/* On récupère l'id en get puis on effectue la requête*/
 $stmt->bindValue(':id', $_GET['id']);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -50,12 +52,14 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 </head>
 
 <body>
+<!-- On remplit nos champs avec les valeurs retournées dans $row -->
   <h1 id="categorie" class="productTitle"><?=$row['categorie']?></h1>
 
   <div class="mainContainer">
 
     <div class="leftContainer">
       <div class="subContainer">
+
         <h2 id="nom" class="subtitle"><?=$row['nom'] ?></h2>
         <p id="note" class="note"><?=$row['note']?>/5</p>
       </div>
@@ -71,6 +75,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <div class="rightContainer">
 
+        <!-- Si l'élément est vide, on n'affiche pas la div -->
         <?php if(!empty($row['plaisirDesYeux'])) {?>
       <div class="productDescription">
         <h2 class="descriptionTitle">Plaisir des yeux</h2>
@@ -78,6 +83,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       </div>
         <?php } ?>
 
+        <!-- Si l'élément est vide, on n'affiche pas la div -->
         <?php if(!empty($row['elevage'])) {?>
       <div class="productDescription">
         <h2 class="descriptionTitle">Elevage</h2>
@@ -85,6 +91,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       </div>
         <?php } ?>
 
+        <!-- Si l'élément est vide, on n'affiche pas la div -->
         <?php if(!empty($row['degustation'])) {?>
       <div class="productDescription">
         <h2 class="descriptionTitle">Degustation</h2>
@@ -92,6 +99,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       </div>
         <?php } ?>
 
+        <!-- Si l'élément est vide, on n'affiche pas la div -->
         <?php if(!empty($row['origine'])) {?>
       <div class="productDescription">
         <h2 class="descriptionTitle">Origine</h2>

@@ -16,7 +16,7 @@ if (empty($_POST['id']) || empty($_POST['nom']) || empty($_POST['categorie']) ||
     exit;
 }*/
 
-
+/* Requête pour sélectionner tous les éléments de la tables meat à l'id récupéré en GET dans l'URL*/
 $request = 'SELECT
 `id`,
 `nom`,
