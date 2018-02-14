@@ -6,7 +6,7 @@
  * Time: 11:08
  */
 
-require_once "./app/backOffice/connexion.php";
+require_once "../app/backOffice/connexion.php";
 
 $request = 'SELECT
 `id`,
@@ -44,8 +44,8 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="shortcut icon" href="meatLogo.ico">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/product.css">
   <title>Document</title>
 </head>
 
@@ -59,9 +59,9 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
         <h2 id="nom" class="subtitle"><?=$row['nom'] ?></h2>
         <p id="note" class="note"><?=$row['note']?>/5</p>
       </div>
-      <img id="image" class="productImg" src="./app/backOffice/img/<?=$row['image']?>" alt="">
+      <img id="image" class="productImg" src="../app/backOffice/img/<?=$row['image']?>" alt="">
       <div class="cartContainer">
-        <img class="cart" src="img/panier.png" alt="">
+        <img class="cart" src="../img/panier.png" alt="">
         <button class="addCart" type="button" name="button">Ajouter au panier</button>
       </div>
       <div class="priceContainer">
@@ -100,9 +100,9 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
         <?php } ?>
 
       <div class="socialContainer">
-        <a href="#"><img class="socialImg" src="img/amazon.png" alt="Amazon"></a>
-        <a href="#"><img class="socialImg" src="img/facebook.png" alt="Facebook"></a>
-        <a href="#"><img class="socialImg" src="img/twitter.png" alt="Twitter"></a>
+        <a href="#"><img class="socialImg" src="../img/amazon.png" alt="Amazon"></a>
+        <a href="#"><img class="socialImg" src="../img/facebook.png" alt="Facebook"></a>
+        <a href="#"><img class="socialImg" src="../img/twitter.png" alt="Twitter"></a>
       </div>
 
 

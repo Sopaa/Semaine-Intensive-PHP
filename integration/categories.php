@@ -81,7 +81,7 @@ $stmt->execute();
       <?php while(false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
 
     <div class="categoriesItems" data-category="<?=$row['categorie']?>">
-        <a href="../product.php?id=<?=$row['id']?>">
+        <a href="./product.php?id=<?=$row['id']?>">
       <img class="categoriesImg" src="../app/backOffice/img/<?=$row['image']?>" alt="">
         </a>
       <p class="categoriesName"><?=$row['nom']?></p>
