@@ -1,3 +1,37 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ayshiff
+ * Date: 13/02/2018
+ * Time: 10:57
+ */
+
+require_once "../app/backOffice/connexion.php";
+
+$request = 'SELECT
+`id`,
+`nom`,
+`categorie`,
+`image`,
+`elevage`,
+`morphologie`,
+`plaisirDesYeux`,
+`degustation`,
+`origine`,
+`prix`,
+`note`,
+`stock`
+
+FROM
+  `meat`
+;';
+
+$stmt = $connection->prepare($request);
+$stmt->execute();
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -35,66 +69,26 @@
 
   <ul class="foodClass">
     <li class="foodItem"><button class="btn-all" type="button" name="button">Tout</button></li>
-    <li class="foodItem"><button class="btn-filter" data-category="boeuf" type="button" name="button">Bœuf</button></li>
-    <li class="foodItem"><button class="btn-filter" data-category="agneau" type="button" name="button">Agneau</button></li>
-    <li class="foodItem"><button class="btn-filter" data-category="veau" type="button" name="button">Veau</button></li>
-    <li class="foodItem"><button class="btn-filter" data-category="porc"type="button" name="button">Porc</button></li>
+    <li class="foodItem"><button class="btn-filter" data-category="Boeuf" type="button" name="button">Bœuf</button></li>
+    <li class="foodItem"><button class="btn-filter" data-category="Agneau" type="button" name="button">Agneau</button></li>
+    <li class="foodItem"><button class="btn-filter" data-category="Veau" type="button" name="button">Veau</button></li>
+    <li class="foodItem"><button class="btn-filter" data-category="Porc"type="button" name="button">Porc</button></li>
   </ul>
 
 
   <div class="categoriesContainer">
-    <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="../img/boeuf2.jpeg" alt="">
-      <p class="categoriesName">Aberdeen Angus</p>
+
+      <?php while(false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
+
+    <div class="categoriesItems" data-category="<?=$row['categorie']?>">
+        <a href="../product.php?id=<?=$row['id']?>">
+      <img class="categoriesImg" src="../app/backOffice/img/<?=$row['image']?>" alt="">
+        </a>
+      <p class="categoriesName"><?=$row['nom']?></p>
     </div>
-    <div class="categoriesItems" data-category="boeuf" >
-      <img class="categoriesImg" src="../img/boeuf6.jpeg" alt="">
-      <p class="categoriesName">Blonde de Galice / Dry Aged</p>
-    </div>
-    <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="../img/angus.jpeg" alt="">
-      <p class="categoriesName">Angus Uruguay</p>
-    </div>
-    <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="../img/boeuf4.jpeg" alt="">
-      <p class="categoriesName">Argentine</p>
-    </div>
-    <div class="categoriesItems" data-category="boeuf" >
-      <img class="categoriesImg" src="../img/boeuf7.jpeg" alt="">
-      <p class="categoriesName">Charolaise</p>
-    </div>
-    <div class="categoriesItems" data-category="boeuf" >
-      <img class="categoriesImg" src="../img/boeuf5.jpeg" alt="">
-      <p class="categoriesName">Black Angus USA</p>
-    </div>
-    <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="../img/boeuf8.jpeg" alt="">
-      <p class="categoriesName">Limousine</p>
-    </div>
-    <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="../img/Boeuf.jpg" alt="">
-      <p class="categoriesName">Wagyu japonais</p>
-    </div>
-    <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="../img/boeuf9.jpeg" alt="">
-      <p class="categoriesName">Simmental / Dry Aged</p>
-    </div>
-    <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="../img/boeuf10.jpeg" alt="">
-      <p class="categoriesName">Wagyu australien</p>
-    </div>
-    <div class="categoriesItems" data-category="veau">
-      <img class="categoriesImg" src="../img/veau2.jpeg" alt="">
-      <p class="categoriesName">Veau</p>
-    </div>
-    <div class="categoriesItems" data-category="agneau">
-      <img class="categoriesImg" src="../img/agneau5.jpeg" alt="">
-      <p class="categoriesName">Agneau</p>
-    </div>
-    <div class="categoriesItems" data-category="porc">
-      <img class="categoriesImg" src="../img/porc2.jpeg" alt="">
-      <p class="categoriesName">Porc noir de Bigorre</p>
-    </div>
+
+
+      <?php endwhile;?>
 
   </div>
 
