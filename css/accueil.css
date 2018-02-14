@@ -1,13 +1,37 @@
+@font-face {
+  font-family: "playfair";
+  src: url("../fonts/PlayfairDisplay-Regular.ttf");
+}
+
+@font-face {
+  font-family: "avenir";
+  src: url("../fonts/Avenir.ttc");
+}
+
 body{
   background-image: url(../img/saucisson.jpg);
   background-size: 1440px 850px;
 }
+a{
+  width: max-content;
+}
 .mid{
-  width: min-content;
+  width: max-content;
   height: min-content;
   margin:auto;
+  margin-top: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .logo{
   width: 117px;
   height: 153px;
+}
+h1{
+  font-family: "playfair";
+  font-size: 64px;
+  color: #FFF;
+  margin-left: 44px;
 }
