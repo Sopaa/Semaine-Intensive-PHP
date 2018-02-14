@@ -1,3 +1,5 @@
+$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
 CREATE TABLE login_admin
 (
   id INT PRIMARY KEY,
@@ -8,5 +10,5 @@ CREATE TABLE login_admin
 INSERT INTO login_admin (pseudo, password)
 VALUES
 (
-  'admin', SHA('MeatADMIN')
+  'admin', ('MeatADMIN')
 );
