@@ -46,12 +46,12 @@
 
     <div class="footer">
       <div class="socialContainer">
-        <a href="#"><img class="socialImg" src="img/amazon.png" alt="Amazon"></a>
-        <a href="#"><img class="socialImg" src="img/facebook.png" alt="Facebook"></a>
-        <a href="#"><img class="socialImg" src="img/twitter.png" alt="Twitter"></a>
+        <a href="#"><img class="socialImg" src="../img/amazon.png" alt="Amazon"></a>
+        <a href="#"><img class="socialImg" src="../img/facebook.png" alt="Facebook"></a>
+        <a href="#"><img class="socialImg" src="../img/twitter.png" alt="Twitter"></a>
       </div>
       <div class="copyright">
-        <p class="underFooterCopyright">© Copyright 2017 Meat. | Mentions légales | CGV</p>
+        <p class="underFooterCopyright">© Copyright 2018 Meat. | Mentions légales | CGV</p>
       </div>
 
     </div>

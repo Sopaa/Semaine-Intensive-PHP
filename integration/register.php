@@ -6,17 +6,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="shortcut icon" href="meatLogo.ico">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/register.css">
+  <link rel="shortcut icon" href="../img/ViandeLogo.png">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/register.css">
   <title>Meat</title>
 </head>
 
 <body>
   <div class="content">
-    <img class="logo" src="img/ViandeLogo.png" alt="Logo">
+    <img class="logo" src="../img/ViandeLogo.png" alt="Logo">
     <h1 class="title">Inscription.</h1>
-    <form action="index.html" method="post">
+    <form action="homepage.php" method="post">
       <div class="container">
 
         <div class="containerLeft">
@@ -37,7 +37,7 @@
   </form>
   <div class="footer">
     <div class="copyright">
-      <p class="underFooterCopyright">© Copyright 2017 Meat. | Mentions légales | CGV</p>
+      <p class="underFooterCopyright">© Copyright 2018 Meat. | Mentions légales | CGV</p>
     </div>
   </div>
   </div>

@@ -5,18 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/categories.css">
+  <link rel="shortcut icon" href="../img/ViandeLogo.png">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/categories.css">
 
-  <title>Document</title>
+  <title>Categories</title>
 </head>
 
 <body>
   <div class="header">
-    <nav>
       <div class="logoPart">
-        <img class="navLogo" src="img/meatLogo.png" alt="Logo">
-        <p class="navTitle">| Meat.</p>
+        <a href="homepage.php"><img class="navLogo" src="../img/meatLogo.png" alt="Logo"></a>
+        <a href="homepage.php"><p class="navTitle">| Meat.</p></a>
       </div>
       <ul>
         <a href="#" class="navLink">
@@ -25,7 +25,7 @@
         <a href="#" class="navLink">
           <li class="navItems">Nos Charcuteries</li>
         </a>
-        <a href="#" class="navLink">
+        <a href="login.php" class="navLink">
           <li class="navItems">Mon Compte</li>
         </a>
       </ul>
@@ -44,55 +44,55 @@
 
   <div class="categoriesContainer">
     <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="img/boeuf2.jpeg" alt="">
+      <img class="categoriesImg" src="../img/boeuf2.jpeg" alt="">
       <p class="categoriesName">Aberdeen Angus</p>
     </div>
     <div class="categoriesItems" data-category="boeuf" >
-      <img class="categoriesImg" src="img/boeuf6.jpeg" alt="">
+      <img class="categoriesImg" src="../img/boeuf6.jpeg" alt="">
       <p class="categoriesName">Blonde de Galice / Dry Aged</p>
     </div>
     <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="img/angus.jpeg" alt="">
+      <img class="categoriesImg" src="../img/angus.jpeg" alt="">
       <p class="categoriesName">Angus Uruguay</p>
     </div>
     <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="img/boeuf4.jpeg" alt="">
+      <img class="categoriesImg" src="../img/boeuf4.jpeg" alt="">
       <p class="categoriesName">Argentine</p>
     </div>
     <div class="categoriesItems" data-category="boeuf" >
-      <img class="categoriesImg" src="img/boeuf7.jpeg" alt="">
+      <img class="categoriesImg" src="../img/boeuf7.jpeg" alt="">
       <p class="categoriesName">Charolaise</p>
     </div>
     <div class="categoriesItems" data-category="boeuf" >
-      <img class="categoriesImg" src="img/boeuf5.jpeg" alt="">
+      <img class="categoriesImg" src="../img/boeuf5.jpeg" alt="">
       <p class="categoriesName">Black Angus USA</p>
     </div>
     <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="img/boeuf8.jpeg" alt="">
+      <img class="categoriesImg" src="../img/boeuf8.jpeg" alt="">
       <p class="categoriesName">Limousine</p>
     </div>
     <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="img/Boeuf.jpg" alt="">
+      <img class="categoriesImg" src="../img/Boeuf.jpg" alt="">
       <p class="categoriesName">Wagyu japonais</p>
     </div>
     <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="img/boeuf9.jpeg" alt="">
+      <img class="categoriesImg" src="../img/boeuf9.jpeg" alt="">
       <p class="categoriesName">Simmental / Dry Aged</p>
     </div>
     <div class="categoriesItems" data-category="boeuf">
-      <img class="categoriesImg" src="img/boeuf10.jpeg" alt="">
+      <img class="categoriesImg" src="../img/boeuf10.jpeg" alt="">
       <p class="categoriesName">Wagyu australien</p>
     </div>
     <div class="categoriesItems" data-category="veau">
-      <img class="categoriesImg" src="img/veau2.jpeg" alt="">
+      <img class="categoriesImg" src="../img/veau2.jpeg" alt="">
       <p class="categoriesName">Veau</p>
     </div>
     <div class="categoriesItems" data-category="agneau">
-      <img class="categoriesImg" src="img/agneau5.jpeg" alt="">
+      <img class="categoriesImg" src="../img/agneau5.jpeg" alt="">
       <p class="categoriesName">Agneau</p>
     </div>
     <div class="categoriesItems" data-category="porc">
-      <img class="categoriesImg" src="img/porc2.jpeg" alt="">
+      <img class="categoriesImg" src="../img/porc2.jpeg" alt="">
       <p class="categoriesName">Porc noir de Bigorre</p>
     </div>
 
@@ -101,9 +101,9 @@
   <footer>
     <div class="footer">
       <div class="socialContainer">
-        <a href="#"><img class="socialImg" src="img/amazon.png" alt="Amazon"></a>
-        <a href="#"><img class="socialImg" src="img/facebook.png" alt="Facebook"></a>
-        <a href="#"><img class="socialImg" src="img/twitter.png" alt="Twitter"></a>
+        <a href="#"><img class="socialImg" src="../img/amazon.png" alt="Amazon"></a>
+        <a href="#"><img class="socialImg" src="../img/facebook.png" alt="Facebook"></a>
+        <a href="#"><img class="socialImg" src="../img/twitter.png" alt="Twitter"></a>
       </div>
       <div class="copyright">
         <p class="underFooterCopyright">© Copyright 2018 Meat. | Mentions légales | CGV</p>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,14 @@
   <link rel="shortcut icon" href="../img/ViandeLogo.png">
   <title>Meat.</title>
 </head>
+
 <body>
-  <div class="mid">
-    <img class="logo"src="../img/ViandeLogo.png" alt="">
-  </div>
+
+    <div class="mid">
+      <a href="homepage.php"><img class="logo" src="../img/ViandeLogo.png" alt=""></a>
+        <a href="homepage.php"><h1>| Meat</h1></a>
+    </div>
+
 </body>
+
 </html>
