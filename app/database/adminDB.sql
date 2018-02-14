@@ -8,5 +8,5 @@ CREATE TABLE login_admin
 INSERT INTO login_admin (pseudo, password)
 VALUES
 (
-  'admin', SHA('MeatADMIN')
+  'admin', 'MeatADMIN'
 );
