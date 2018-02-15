@@ -5,6 +5,7 @@
  * Date: 13/02/2018
  * Time: 10:57
  */
+session_start();
 
 require_once "../app/backOffice/connexion.php";
 
@@ -57,8 +58,8 @@ $stmt->execute();
         <a href="#" class="navLink">
           <li class="navItems">Nos Viandes</li>
         </a>
-        <a href="login.php" class="navLink">
-          <li class="navItems">Mon Panier</li>
+        <a href="panier.php" class="navLink">
+          <li class="navItems">Mon Panier ( <?=$_SESSION['panier']?> )</li>
         </a>
         <a href="login.php" class="navLink">
           <li class="navItems">Mon Compte</li>

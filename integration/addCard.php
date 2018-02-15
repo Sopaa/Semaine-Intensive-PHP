@@ -5,7 +5,7 @@
  * Date: 13/02/2018
  * Time: 09:56
  */
-
+session_start();
 
 
 require_once "../app/backOffice/connexion.php";
@@ -31,5 +31,5 @@ $stmt->bindValue(':id', htmlentities($_GET['id']));
     $stmt->bindValue(':stock', htmlentities($_GET['stock'])-1);
 /*}*/
 $stmt->execute();
-
+$_SESSION['panier'] += 1;
 header('Location: categories.php');
