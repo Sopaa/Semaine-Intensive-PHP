@@ -1,7 +1,7 @@
 
 # Semaine-Intensive-PHP
 
-#Projet Meat.
+## Projet Meat.
 Nous avons developpé en PHP/MySQL et intégré en HTML/CSS une application Web proposant un service de livraison de viandes de qualité superieure.
 
 *  id (entier)
@@ -17,7 +17,7 @@ Nous avons developpé en PHP/MySQL et intégré en HTML/CSS une application Web 
 *  Note (entier)
 *  Stock (entier)
 
-#SiteMap
+## SiteMap
 ![](/img/sitemap.png)
 
 ### Formulaire
