@@ -26,7 +26,7 @@ WHERE
         $user = $stmt->fetch();
 
         if ($user) {
-            header('location: index.php');
+            header('location: homepage.php');
         }
 
     }
@@ -49,7 +49,7 @@ WHERE
 
 <body>
 <div class="content">
-    <img class="logo" src="img/ViandeLogo.png" alt="Logo">
+    <img class="logo" src="../img/ViandeLogo.png" alt="Logo">
     <div class="formContainer">
 
         <h1 class="title">Bienvenue sur Meat.</h1>
@@ -69,9 +69,9 @@ WHERE
 
         <div class="footer">
             <div class="socialContainer">
-                <a href="#"><img class="socialImg" src="img/amazon.png" alt="Amazon"></a>
-                <a href="#"><img class="socialImg" src="img/facebook.png" alt="Facebook"></a>
-                <a href="#"><img class="socialImg" src="img/twitter.png" alt="Twitter"></a>
+                <a href="#"><img class="socialImg" src="../img/amazon.png" alt="Amazon"></a>
+                <a href="#"><img class="socialImg" src="../img/facebook.png" alt="Facebook"></a>
+                <a href="#"><img class="socialImg" src="../img/twitter.png" alt="Twitter"></a>
             </div>
 
             <div class="copyright">

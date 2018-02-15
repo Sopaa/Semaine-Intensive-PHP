@@ -1,9 +1,9 @@
 <?php
 $username = 'root';
-$password = '';
+$password = 'root';
 
 try {
-    $conn = new PDO('mysql:host=127.0.0.1;dbname=DataUsers',$username, $password);
+    $conn = new PDO('mysql:host=127.0.0.1;dbname=SemaineIntensivePHP',$username, $password);
 } catch (PDOException $exception) {
-    die("Erreur");
+    die($exception -> getMessage());
 }
