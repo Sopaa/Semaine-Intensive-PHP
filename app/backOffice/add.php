@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+
+if(isset($_SESSION['logged'])){?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -45,3 +51,5 @@
 
 </body>
 </html>
+
+<?php } else { header('location: error.php');} ?>

@@ -2,6 +2,9 @@
 
 require_once "connexion.php";
 
+session_start();
+
+$_SESSION['error'] = '';
 if (!empty($_POST['email']) || !empty($_POST['password'])) {
     $email = htmlentities($_POST['email']);
     $password = htmlentities($_POST['password']);
@@ -27,6 +30,8 @@ WHERE
 
         if ($user) {
             header('location: homepage.php');
+        } else {
+            $_SESSION['error'] = 'Mauvaise combinaison';
         }
 
     }
@@ -62,6 +67,7 @@ WHERE
                 <input class="loginInput" type="password" name="password" value="" placeholder="Votre mot de passe">
                 <p class="formText">Vous n’avez pas de compte ? <strong><a class="Register" href="add.php">Inscrivez-vous !</a></strong></p>
                 <input class="submitInput" type="submit" name="submit" value="Se Connecter">
+                <p class="error" style="color: white; text-align: center;"><?=$_SESSION['error']?></p>
                 <a href="admin.php" class="link" style=" margin: 0 auto;">
                 <input class="submitInput" value="Connexion Admin">
                 </a>

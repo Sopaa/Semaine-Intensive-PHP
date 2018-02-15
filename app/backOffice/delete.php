@@ -3,11 +3,12 @@
  * Created by PhpStorm.
  * User: ayshiff
  * Date: 13/02/2018
- * Time: 09:56
+ * Time: 10:57
  */
+session_start();
 
 
-
+if(isset($_SESSION['logged'])){
 require_once "connexion.php";
 
 /* Requête */
@@ -62,3 +63,4 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 </form>
 
 </body>
+<?php } else { header('location: error.php');} ?>

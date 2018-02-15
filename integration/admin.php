@@ -5,7 +5,7 @@
  * Date: 15/02/2018
  * Time: 11:57
  */
-
+session_start();
 require_once "connexion.php";
 
 if (true) {
@@ -32,7 +32,11 @@ WHERE
             $stmt->execute();
             $user = $stmt->fetch();
 
+            $_SESSION['logged'] = 'true';
+
+
             if ($user) {
+
                 header('location: ../app/backOffice/index.php');
             }
 
