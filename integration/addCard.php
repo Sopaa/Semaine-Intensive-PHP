@@ -32,4 +32,5 @@ $stmt->bindValue(':id', htmlentities($_GET['id']));
 /*}*/
 $stmt->execute();
 $_SESSION['panier'] += 1;
+array_push($_SESSION['panierStock'],$_GET['id']);
 header('Location: categories.php');

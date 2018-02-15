@@ -1,6 +1,7 @@
 <?php
 session_start();
 $_SESSION['panier'] = 0;
+$_SESSION['panierStock'] = [];
 ?>
 <!DOCTYPE html>
 <html>
