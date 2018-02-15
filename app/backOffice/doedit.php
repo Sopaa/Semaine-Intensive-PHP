@@ -55,12 +55,12 @@ WHERE
 id = :id
 
 ;';
+    /* Upload image in img folder to the backOffice roots */
 
-    /* On ulpoad l'image dans le dossier img à la racine de backOffice*/
     $uploadfile = 'img/'.$_FILES['image']['name'];
     move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
 
-    /* Si l'image a un poids supérieur à 1000 octets, on renvoit une erreur
+    /* If image weight is over 1000 octets, send an error
     if($_FILES['image']['size'] > 1000) {
         throw new Exception('Fichier trop volumineux');
     }*/
@@ -87,7 +87,7 @@ $stmt->bindValue(':note', htmlentities($_POST['note']));
 $stmt->bindValue(':stock', htmlentities($_POST['stock']));
 $stmt->execute();
 
-/* Retour à l'index*/
+/* Back to index*/
 header('Location: index.php');
 
  } else { header('location: error.php');}
