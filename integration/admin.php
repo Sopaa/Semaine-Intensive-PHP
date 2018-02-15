@@ -47,15 +47,15 @@ WHERE
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="meatLogo.ico">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="../img/ViandeLogo.png">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/login.css">
     <title>Meat</title>
 </head>
 
 <body>
 <div class="content">
-    <img class="logo" src="img/ViandeLogo.png" alt="Logo">
+    <img class="logo" src="../img/ViandeLogo.png" alt="Logo">
     <div class="formContainer">
 
         <h1 class="title">Bienvenue sur Meat.</h1>
@@ -73,9 +73,9 @@ WHERE
 
         <div class="footer">
             <div class="socialContainer">
-                <a href="#"><img class="socialImg" src="img/amazon.png" alt="Amazon"></a>
-                <a href="#"><img class="socialImg" src="img/facebook.png" alt="Facebook"></a>
-                <a href="#"><img class="socialImg" src="img/twitter.png" alt="Twitter"></a>
+                <a href="#"><img class="socialImg" src="../img/amazon.png" alt="Amazon"></a>
+                <a href="#"><img class="socialImg" src="../img/facebook.png" alt="Facebook"></a>
+                <a href="#"><img class="socialImg" src="../img/twitter.png" alt="Twitter"></a>
             </div>
 
             <div class="copyright">
