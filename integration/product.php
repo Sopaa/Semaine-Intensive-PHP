@@ -53,14 +53,14 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 <body>
 <!-- On remplit nos champs avec les valeurs retournées dans $row -->
-  <h1 id="categorie" class="productTitle"><?=$row['categorie']?></h1>
+  <h1 id="categorie" class="productTitle"><a href="categories.php?>" style="text-decoration: none; color: #FFFFFF;"><?=$row['categorie']?></a></h1>
 
   <div class="mainContainer">
 
     <div class="leftContainer">
       <div class="subContainer">
 
-        <h2 id="nom" class="subtitle"><?=$row['nom'] ?></h2>
+          <h2 id="nom" class="subtitle"><?=$row['nom'] ?></h2>
         <p id="note" class="note"><?=$row['note']?>/5</p>
       </div>
       <img id="image" class="productImg" src="../app/backOffice/img/<?=$row['image']?>" alt="">
