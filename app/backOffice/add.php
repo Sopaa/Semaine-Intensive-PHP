@@ -1,31 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="shortcut icon" href="../../img/ViandeLogo.png">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/edit.css">
+    <title>Edit</title>
 </head>
 <body>
-<form action="doadd.php" method="post" enctype="multipart/form-data">
-    <label for="id"> id : <input type="number" name="id"></label>
-    <label for="nom"> nom : <input type="text" name="nom"></label>
-    <label for="categorie"> categorie : <input type="text" name="categorie"></label>
+
+<div class="content">
+    <a href="index.php">
+        <img class="logo" src="../../img/ViandeLogo.png" alt="Logo"></a>
+    <div class="formContainer">
+
+        <h1 class="title"> Ajouter un produit </h1>
+
+        <!-- On remplit notre form avec les valeurs des éléments de la db puis on les renvoit en POST -->
+        <form class="form" action="doadd.php" method="post" enctype="multipart/form-data" onsubmit="verifForm">
+            <div class="formFlex">
+                <input class="loginInput" placeholder="Identifiant" type="number" name="id" >
+                <input class="loginInput" placeholder="Nom" type="text" name="nom" >
+                <input class="loginInput" placeholder="Catégorie" type="text" name="categorie" >
 
 
-    <label for="image" > image : <input type="file" name="image"></label>
+                <input class="loginInput" placeholder="Image" type="file" name="image" >
 
-    <label for="elevage"> elevage : <input type="text" name="elevage"></label>
-    <label for="morphologie"> morphologie : <input type="text" name="morphologie"></label>
-    <label for="plaisirDesYeux"> plaisir des yeux : <input type="text" name="plaisirDesYeux"></label>
-    <label for="degustation"> degustation : <input type="text" name="degustation"></label>
-    <label for="origine"> origine : <input type="text" name="origine"></label>
-    <label for="prix"> prix : <input type="number" name="prix"></label>
-    <label for="note"> note : <input type="number" name="note"></label>
-    <label for="stock"> stock : <input type="number" name="stock"></label>
-
-    <input type="submit" value="Ajouter">
-</form>
+                <input class="loginInput" placeholder="Élevage" type="text" name="elevage" >
+                <input class="loginInput" placeholder="Morphologie" type="text" name="morphologie" >
+            </div>
+            <div class="formFlex">
+                <input class="loginInput" placeholder="Plaisir des yeux" type="text" name="plaisirDesYeux" >
+                <input class="loginInput" placeholder="Dégustation" type="text" name="degustation" >
+                <input class="loginInput" placeholder="Origine" type="text" name="origine" >
+                <input class="loginInput" placeholder="Prix" type="number" name="prix" >
+                <input class="loginInput" placeholder="Note" type="number" name="note" >
+                <input class="loginInput" placeholder="Stock" type="number" name="stock" >
+            </div>
+            <input class="submitInput" type="submit" value="Ajouter">
+        </form>
+    </div>
 
 </body>
 </html>

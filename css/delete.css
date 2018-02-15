@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "playfair";
+  src: url("../fonts/PlayfairDisplay-Regular.ttf");
+}
+
+@font-face {
+  font-family: "avenir";
+  src: url("../fonts/Avenir.ttc");
+}
+
+body {
+  background-color: #000;
+  color: #FFF;
+  font-family: "playfair";
+}
+
+.title {
+  margin-top: 10%;
+  text-align: center;
+  font-size: 36px;
+  padding-bottom: 74px;
+  font-family: "playfair";
+}
+
+.alert {
+  padding: 20px;
+  background-color: transparent;
+  border: 1px solid #D8D8D8;
+  color: #D8D8D8;
+  margin-bottom: 16px;
+  font-family: "avenir";
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 2px;
+}
+
+.submitBtn {
+  width: 10%;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-family: "avenir";
+  margin-left: 45%;
+  margin-top: 6%;
+  transition: .5s ease;
+}
+
+.submitBtn:hover {
+  background-color: #D8D8D8;
+  color: black;
+  transition: .5s ease;
+  cursor: pointer;
+}

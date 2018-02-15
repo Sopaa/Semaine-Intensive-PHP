@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "playfair";
+  src: url("../fonts/PlayfairDisplay-Regular.ttf");
+}
+
+@font-face {
+  font-family: "avenir";
+  src: url("../fonts/Avenir.ttc");
+}
+
+body {
+  background-color: #000;
+  color: #FFF;
+  font-family: "playfair";
+}
+
+.content {
+  background-color: black;
+  width: 1010px;
+  height: 668px;
+  margin-right: 215px;
+  margin-left: 215px;
+  margin-top: 60px;
+}
+
+.logo {
+  width: 50px;
+  height: 65px;
+  margin-top: 18px;
+  margin-left: 45px;
+}
+
+.imgContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.backgndImg {
+  position: absolute;
+  opacity: 0.45;
+  /*margin-left: 215px;
+  margin-top: 61px;*/
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  padding-bottom: 74px;
+  font-family: "playfair";
+}
+
+.footer {
+  margin-bottom: 0;
+}
+
+.socialContainer {
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
+/*Formulaire */
+
+.formContainer {
+  height: 516px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 57px;
+}
+
+.formFlex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.formText {
+  font-size: 10px;
+  padding-top: 10px;
+  text-align: center;
+  font-family: "avenir";
+}
+
+.loginInput {
+  margin: 10px;
+  width: 250px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid #9B9B9B;
+  color: #FFF;
+  padding-left: 10px;
+}
+
+.loginInput::placeholder {
+  color: #D8D8D8;
+}
+
+.loginInput:focus {
+  outline: 0;
+}
+
+/* .imageInput {
+  cursor: pointer;
+  color: #D8D8D8;
+}
+
+.inputFile {
+  display: none;
+} */
+
+.submitInput {
+  width: 174px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid #9B9B9B;
+  color: #9B9B9B;
+  padding-left: 10px;
+  margin-left: 40%;
+  margin-top: 15px;
+}
+
+.submitInput {
+  outline: 0;
+}
+
+.submitInput:hover {
+  background-color: #9B9B9B;
+  color: #000;
+  transition: 0.3s ease;
+}
+
+.socialContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 188px;
+  height: 36px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.Register {
+  color: #FFF;
+  font-weight: 800;
+}
+
+.Register:hover {
+  text-decoration: underline;
+}
+
+.underFooterCopyright {
+  font-family: "avenir";
+  font-size: 14px;
+  text-align: center;
+}

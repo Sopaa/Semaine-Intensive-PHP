@@ -45,35 +45,51 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="shortcut icon" href="../../img/ViandeLogo.png">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/edit.css">
+    <title>Edit</title>
 </head>
 <body>
+
+<div class="content">
+    <a href="index.php">
+        <img class="logo" src="../../img/ViandeLogo.png" alt="Logo"></a>
+    <div class="formContainer">
+
+        <h1 class="title">Modifier les produits.</h1>
+
 <!-- On remplit notre form avec les valeurs des éléments de la db puis on les renvoit en POST -->
-<form action="doedit.php" method="post" enctype="multipart/form-data">
-    <label for="id"> id : <input type="text" name="id" value="<?=$row['id'] ?>"></label>
-    <label for="nom"> nom : <input type="text" name="nom" value="<?=$row['nom'] ?>"></label>
-    <label for="categorie"> categorie : <input type="text" name="categorie" value="<?=$row['categorie'] ?>"></label>
+<form class="form" action="doedit.php" method="post" enctype="multipart/form-data">
+    <div class="formFlex">
+    <input class="loginInput" type="number" placeholder="Identifiant" name="id" value="<?=$row['id'] ?>">
+    <input class="loginInput" type="text" placeholder="Nom" name="nom" value="<?=$row['nom'] ?>">
+    <input class="loginInput" type="text" placeholder="Catégorie" name="categorie" value="<?=$row['categorie'] ?>">
 
 
-    <label for="image"> image : <input type="file" name="image" value="<?=$row['image'] ?>"></label>
+    <input class="loginInput" type="file" placeholder="Image" name="image" value="<?=$row['image'] ?>">
 
-    <label for="elevage"> elevage : <input type="text" name="elevage" value="<?=$row['elevage'] ?>"></label>
-    <label for="morphologie"> morphologie : <input type="text" name="morphologie" value="<?=$row['morphologie'] ?>"></label>
-    <label for="plaisirDesYeux"> plaisir des yeux : <input type="text" name="plaisirDesYeux" value="<?=$row['plaisirDesYeux'] ?>"></label>
-    <label for="degustation"> degustation : <input type="text" name="degustation" value="<?=$row['degustation'] ?>"></label>
-    <label for="origine"> origine : <input type="text" name="origine" value="<?=$row['origine'] ?>"></label>
-    <label for="prix"> prix : <input type="number" name="prix" value="<?=$row['prix'] ?>"></label>
-    <label for="note"> note : <input type="text" name="note" value="<?=$row['note'] ?>"></label>
-    <label for="stock"> stock : <input type="text" name="stock" value="<?=$row['stock'] ?>"></label>
-
-    <input type="submit" value="Modifier">
+    <input class="loginInput" type="text" placeholder="Élevage" name="elevage" value="<?=$row['elevage'] ?>">
+    <input class="loginInput" type="text" placeholder="Morphologie" name="morphologie" value="<?=$row['morphologie'] ?>">
+    </div>
+    <div class="formFlex">
+    <input class="loginInput" type="text" placeholder="Plaisir des yeux" name="plaisirDesYeux" value="<?=$row['plaisirDesYeux'] ?>">
+    <input class="loginInput" type="text" placeholder="Dégustation" name="degustation" value="<?=$row['degustation'] ?>">
+    <input class="loginInput" type="text" placeholder="Origine" name="origine" value="<?=$row['origine'] ?>">
+    <input class="loginInput" type="number" placeholder="Prix" name="prix" value="<?=$row['prix'] ?>">
+    <input class="loginInput" type="number" placeholder="Note" name="note" value="<?=$row['note'] ?>">
+    <input class="loginInput" type="number" placeholder="Stock" name="stock" value="<?=$row['stock'] ?>">
+    </div>
+    <input class="submitInput" type="submit" value="Modifier">
 </form>
+    </div>
 
 </body>
 </html>
