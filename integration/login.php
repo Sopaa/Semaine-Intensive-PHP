@@ -14,7 +14,9 @@
 
 <body>
   <div class="content">
-    <img class="logo" src="../img/ViandeLogo.png" alt="Logo">
+      <a href="homepage.php">
+        <img class="logo" src="../img/ViandeLogo.png" alt="Logo">
+      </a>
     <div class="formContainer">
 
       <h1 class="title">Bienvenue sur Meat.</h1>

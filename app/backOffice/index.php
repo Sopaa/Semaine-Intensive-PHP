@@ -46,7 +46,7 @@ $stmt->execute();
 
 <div class="content">
     <header class="headerContainer">
-        <a href="index.php"><img src="../../img/ViandeLogo.png" alt="Logo"></a>
+        <a href="index.php"><img class="logo" src="../../img/ViandeLogo.png" alt="Logo"></a>
     </header>
 
     <div class="itemsContainer">
@@ -105,7 +105,3 @@ if (isset($_GET['error'])) {
 
 </body>
 </html>
-
-
-
-
