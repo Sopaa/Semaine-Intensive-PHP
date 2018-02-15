@@ -55,6 +55,7 @@ id = :id
 
 ;';
 
+    /* On ulpoad l'image dans le dossier img à la racine de backOffice*/
     $uploadfile = 'img/'.$_FILES['image']['name'];
     move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile);
 
