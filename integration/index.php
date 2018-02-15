@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION['panier'] = 0;
+?>
 <!DOCTYPE html>
 <html>
 
