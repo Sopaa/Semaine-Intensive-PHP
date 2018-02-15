@@ -3,8 +3,8 @@
 require_once "connexion.php";
 
 if (!empty($_POST['email']) || !empty($_POST['password'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = htmlentities($_POST['email']);
+    $password = htmlentities($_POST['password']);
 
 //Check if input is not empty
     if (!empty($email) && !empty($password)) {
@@ -94,13 +94,13 @@ require_once "connexion.php";
 if (!empty($_POST['nom']) || !empty($_POST['password']) || !empty($_POST['prenom']) || !empty($_POST['adresse'])
 || !empty($_POST['date_naissance']) || !empty($_POST['ville']) || !empty($_POST['email'])) {
 
-    $password = $_POST['password'];
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $adresse = $_POST['adresse'];
-    $date = $_POST['date_naissance'];
-    $ville = $_POST['ville'];
-    $email = $_POST['email'];
+    $password = htmlentities($_POST['password']);
+    $nom = htmlentities($_POST['nom']);
+    $prenom = htmlentities($_POST['prenom']);
+    $adresse = htmlentities($_POST['adresse']);
+    $date = htmlentities($_POST['date_naissance']);
+    $ville = htmlentities($_POST['ville']);
+    $email = htmlentities($_POST['email']);
 
     $requete = "INSERT INTO `Users` (`nom`, `prenom`, `adresse`, `date_naissance`, `ville`, `email`, `password`) VALUES (:nom, :prenom, :adresse, :date_naissance, :ville, :email, :password);";
 

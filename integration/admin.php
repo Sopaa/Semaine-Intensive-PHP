@@ -10,8 +10,8 @@ require_once "connexion.php";
 
 if (true) {
     if (!empty($_POST['email']) || !empty($_POST['password'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $email = htmlentities($_POST['email']);
+        $password = htmlentities($_POST['password']);
 
 //Check if input is not empty
         if (!empty($email) && !empty($password)) {
@@ -96,8 +96,8 @@ require_once "connexion.php";
 
 if (!empty($_POST['email']) || !empty($_POST['password'])) {
 
-    $password = $_POST['password'];
-    $email = $_POST['email'];
+    $password = htmlentities($_POST['password']);
+    $email = htmlentities($_POST['email']);
 
     $requete = "INSERT INTO `loginAdmin` (`email`, `password`) VALUES (:email, :password);";
 
