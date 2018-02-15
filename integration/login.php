@@ -2,7 +2,7 @@
 
 require_once "connexion.php";
 
-if (true) {
+if (!empty($_POST['email']) || !empty($_POST['password'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -15,7 +15,7 @@ if (true) {
 FROM
 `Users`
 WHERE
-`email` = :email and
+`email` = :email AND
 `password` = :password
 ;";
 
@@ -31,6 +31,7 @@ WHERE
 
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +62,9 @@ WHERE
                 <input class="loginInput" type="password" name="password" value="" placeholder="Votre mot de passe">
                 <p class="formText">Vous n’avez pas de compte ? <strong><a class="Register" href="add.php">Inscrivez-vous !</a></strong></p>
                 <input class="submitInput" type="submit" name="submit" value="Se Connecter">
-                <a href="admin.php" class="link"><div class="submitInput">Connection Admin</div></a>
+                <a href="admin.php" class="link" style=" margin: 0 auto;">
+                <input class="submitInput" value="Connexion Admin">
+                </a>
             </div>
         </form>
 
@@ -88,28 +91,31 @@ WHERE
 <?php
 require_once "connexion.php";
 
-$password = $_POST['password'];
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
-$adresse = $_POST['adresse'];
-$date = $_POST['date_naissance'];
-$ville = $_POST['ville'];
-$email = $_POST['email'];
+if (!empty($_POST['nom']) || !empty($_POST['password']) || !empty($_POST['prenom']) || !empty($_POST['adresse'])
+|| !empty($_POST['date_naissance']) || !empty($_POST['ville']) || !empty($_POST['email'])) {
 
-$requete = "INSERT INTO `Users` (`nom`, `prenom`, `adresse`, `date_naissance`, `ville`, `email`, `password`) VALUES (:nom, :prenom, :adresse, :date_naissance, :ville, :email, :password);";
+    $password = $_POST['password'];
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $adresse = $_POST['adresse'];
+    $date = $_POST['date_naissance'];
+    $ville = $_POST['ville'];
+    $email = $_POST['email'];
 
-$stmt = $conn->prepare($requete);
+    $requete = "INSERT INTO `Users` (`nom`, `prenom`, `adresse`, `date_naissance`, `ville`, `email`, `password`) VALUES (:nom, :prenom, :adresse, :date_naissance, :ville, :email, :password);";
 
-$stmt->bindParam(':nom', $nom);
-$stmt->bindParam(':prenom', $prenom);
-$stmt->bindParam(':adresse', $adresse);
-$stmt->bindParam(':date_naissance', $date);
-$stmt->bindParam(':ville', $ville);
-$stmt->bindParam(':email', $email);
-$stmt->bindParam(':password', $password);
+    $stmt = $conn->prepare($requete);
 
-$stmt->execute();
+    $stmt->bindParam(':nom', $nom);
+    $stmt->bindParam(':prenom', $prenom);
+    $stmt->bindParam(':adresse', $adresse);
+    $stmt->bindParam(':date_naissance', $date);
+    $stmt->bindParam(':ville', $ville);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':password', $password);
 
+    $stmt->execute();
+}
 ?>
 
 

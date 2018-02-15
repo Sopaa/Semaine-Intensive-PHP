@@ -107,10 +107,11 @@ body {
   background: transparent;
   border: 1px solid #9B9B9B;
   color: #9B9B9B;
-  padding-left: 10px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 15px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .submitInput {
@@ -145,4 +146,8 @@ body {
 .underFooterCopyright {
   font-family: "avenir";
   font-size: 14px;
+}
+
+#submitAdmin {
+
 }

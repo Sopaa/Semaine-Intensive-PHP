@@ -9,32 +9,34 @@
 require_once "connexion.php";
 
 if (true) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    if (!empty($_POST['email']) || !empty($_POST['password'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
 //Check if input is not empty
-    if (!empty($email) && !empty($password)) {
+        if (!empty($email) && !empty($password)) {
 //Get mail and password from db
-        $requete = "SELECT
+            $requete = "SELECT
 `email`,
 `password`
 FROM
 `loginAdmin`
 WHERE
-`email` = :email and
+`email` = :email AND
 `password` = :password
 ;";
 
-        $stmt = $conn->prepare($requete);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $password);
-        $stmt->execute();
-        $user = $stmt->fetch();
+            $stmt = $conn->prepare($requete);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':password', $password);
+            $stmt->execute();
+            $user = $stmt->fetch();
 
-        if ($user) {
-            header('location: ../app/backOffice/index.php');
+            if ($user) {
+                header('location: ../app/backOffice/index.php');
+            }
+
         }
-
     }
 }
 ?>
@@ -58,7 +60,7 @@ WHERE
     <img class="logo" src="../img/ViandeLogo.png" alt="Logo">
     <div class="formContainer">
 
-        <h1 class="title">Bienvenue sur Meat.</h1>
+        <h1 class="title">Connexion Admin </h1>
 
 
         <form class="" action="" method="post">
@@ -92,16 +94,18 @@ WHERE
 <?php
 require_once "connexion.php";
 
-$password = $_POST['password'];
-$email = $_POST['email'];
+if (!empty($_POST['email']) || !empty($_POST['password'])) {
 
-$requete = "INSERT INTO `loginAdmin` (`email`, `password`) VALUES (:email, :password);";
+    $password = $_POST['password'];
+    $email = $_POST['email'];
 
-$stmt = $conn->prepare($requete);
+    $requete = "INSERT INTO `loginAdmin` (`email`, `password`) VALUES (:email, :password);";
 
-$stmt->bindParam(':email', $email);
-$stmt->bindParam(':password', $password);
+    $stmt = $conn->prepare($requete);
 
-$stmt->execute();
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':password', $password);
 
+    $stmt->execute();
+}
 ?>

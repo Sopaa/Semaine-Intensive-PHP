@@ -1,6 +1,6 @@
 
 CREATE TABLE Users (
-  id INT(10),
+  id INT(10) ,
   nom VARCHAR(255),
   prenom VARCHAR(255),
   adresse VARCHAR(255),
