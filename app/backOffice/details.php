@@ -8,7 +8,7 @@
 
 require_once "connexion.php";
 
-/* requête SELECT*/
+/* requête */
 $request = 'SELECT
 `id`,
 `nom`,
@@ -26,47 +26,91 @@ $request = 'SELECT
 FROM
   `meat`
 WHERE
-`id` = :id  
+`id` = :id
 
 ;';
 
-/* On récupère l'id en get qu'on passe dans la requête*/
 $stmt = $connection->prepare($request);
+/* On récupère l'id en get puis on effectue la requête*/
 $stmt->bindValue(':id', $_GET['id']);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
-<!doctype html>
-<html lang="en">
+
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../../img/ViandeLogo.png">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/product.css">
     <title>Document</title>
 </head>
+
 <body>
-<h1> Details de <?=$row['nom'] ?></h1>
+<!-- On remplit nos champs avec les valeurs retournées dans $row -->
+<h1 id="categorie" class="productTitle"><?=$row['categorie'] ?></h1>
 
-<tr>
-    <td><?=$row['id']?></td>
-    <td><?=$row['categorie']?></td>
-    <td><?=$row['image']?></td>
-    <td><?=$row['elevage']?></td>
-    <td><?=$row['morphologie']?></td>
-    <td><?=$row['plaisirDesYeux']?></td>
-    <td><?=$row['degustation']?></td>
-    <td><?=$row['origine']?></td>
-    <td><?=$row['note']?></td>
-    <td><?=$row['stock']?></td>
-    <td><a href="details.php?id=<?=$row['id']?>"><?=$row['nom']?></a></td>
-    <td>
-        <a href="delete.php?id=<?=$row['id']?>"> Supprimer </a>
-        <a href="edit.php?id=<?=$row['id']?>"> Modifier </a>
-    </td>
-</tr>
+<div class="mainContainer">
 
-</form>
+    <div class="leftContainer">
+        <div class="subContainer">
+
+            <h2 id="nom" class="subtitle"><?=$row['nom'] ?></h2>
+            <p id="note" class="note"><?=$row['note']?>/5</p>
+        </div>
+        <img id="image" class="productImg" src="img/<?=$row['image']?>" alt="">
+        <div class="cartContainer">
+            <p style="font-size: 20px;"> Stock : <?=$row['stock'] ?> </p>
+        </div>
+        <div class="priceContainer">
+            <p id="prix" class="price"><?=$row['prix']?> €/pièce</p>
+        </div>
+    </div>
+
+    <div class="rightContainer">
+
+        <!-- Si l'élément est vide, on n'affiche pas la div -->
+        <?php if(!empty($row['plaisirDesYeux'])) {?>
+            <div class="productDescription">
+                <h2 class="descriptionTitle">Plaisir des yeux</h2>
+                <p id="plaisirdesyeux" class="descriptionText"><?=$row['plaisirDesYeux']?></p>
+            </div>
+        <?php } ?>
+
+        <!-- Si l'élément est vide, on n'affiche pas la div -->
+        <?php if(!empty($row['elevage'])) {?>
+            <div class="productDescription">
+                <h2 class="descriptionTitle">Elevage</h2>
+                <p id="elevage" class="descriptionText"><?=$row['elevage']?></p>
+            </div>
+        <?php } ?>
+
+        <!-- Si l'élément est vide, on n'affiche pas la div -->
+        <?php if(!empty($row['degustation'])) {?>
+            <div class="productDescription">
+                <h2 class="descriptionTitle">Degustation</h2>
+                <p id="degustation" class="descriptionText"><?=$row['degustation']?></p>
+            </div>
+        <?php } ?>
+
+        <!-- Si l'élément est vide, on n'affiche pas la div -->
+        <?php if(!empty($row['origine'])) {?>
+            <div class="productDescription">
+                <h2 class="descriptionTitle">Origine</h2>
+                <p id="origine" class="descriptionText"><?=$row['origine']?></p>
+            </div>
+        <?php } ?>
+
+
+    </div>
+
+</div>
 
 </body>
+
+</html>

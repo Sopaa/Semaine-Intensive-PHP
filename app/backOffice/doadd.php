@@ -2,10 +2,13 @@
 /**
  * Created by PhpStorm.
  * User: ayshiff
- * Date: 12/02/2018
- * Time: 11:45
+ * Date: 13/02/2018
+ * Time: 10:57
  */
+session_start();
 
+
+if(isset($_SESSION['logged'])){
 require_once "connexion.php";
 
 /* On vérifie que tous les champs sont bien remplis*/
@@ -55,3 +58,5 @@ $stmt->execute();
 
 /* Retour à l'index*/
 header('Location: index.php');
+
+} else { header('location: error.php');}

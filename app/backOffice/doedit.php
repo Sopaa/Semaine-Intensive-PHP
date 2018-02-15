@@ -3,11 +3,12 @@
  * Created by PhpStorm.
  * User: ayshiff
  * Date: 13/02/2018
- * Time: 09:56
+ * Time: 10:57
  */
+session_start();
 
 
-
+if(isset($_SESSION['logged'])){
 require_once "connexion.php";
 
 /* Si l'utilisateur ne rentre pas d'image, on garde celle existante, sinon on utilise celle qu'il a rentré */
@@ -89,3 +90,4 @@ $stmt->execute();
 /* Retour à l'index*/
 header('Location: index.php');
 
+ } else { header('location: error.php');}

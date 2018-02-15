@@ -5,7 +5,10 @@
  * Date: 13/02/2018
  * Time: 10:57
  */
+session_start();
 
+
+if(isset($_SESSION['logged'])){
 require_once "connexion.php";
 
 /* On sélectionne tous les élement de la table meat*/
@@ -105,3 +108,4 @@ if (isset($_GET['error'])) {
 
 </body>
 </html>
+<?php } else { header('location: error.php');} ?>
