@@ -26,7 +26,7 @@ $request = 'SELECT
 FROM
   `meat`
 WHERE
-`id` = :id  
+`id` = :id
 
 ;';
 
@@ -115,12 +115,6 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
         <p id="origine" class="descriptionText"><?=$row['origine']?></p>
       </div>
         <?php } ?>
-
-      <div class="socialContainer">
-        <a href="#"><img class="socialImg" src="../img/amazon.png" alt="Amazon"></a>
-        <a href="#"><img class="socialImg" src="../img/facebook.png" alt="Facebook"></a>
-        <a href="#"><img class="socialImg" src="../img/twitter.png" alt="Twitter"></a>
-      </div>
 
 
     </div>

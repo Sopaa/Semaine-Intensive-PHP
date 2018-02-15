@@ -23,8 +23,8 @@
         <a href="categories.php" class="navLink">
           <li class="navItems">Nos Viandes</li>
         </a>
-        <a href="#" class="navLink">
-          <li class="navItems">Nos Charcuteries</li>
+        <a href="login.php" class="navLink">
+          <li class="navItems">Mon Panier</li>
         </a>
         <a href="login.php" class="navLink">
           <li class="navItems">Mon Compte</li>
