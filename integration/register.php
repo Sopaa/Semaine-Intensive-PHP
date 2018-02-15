@@ -18,20 +18,20 @@
     <img class="logo" src="../img/ViandeLogo.png" alt="Logo">
   </a>
     <h1 class="title">Inscription.</h1>
-    <form action="homepage.php" method="post">
+    <form action="login.php" method="post">
       <div class="container">
 
         <div class="containerLeft">
-          <input class="loginInput" type="text" name="Nom" placeholder="Nom">
-          <input class="loginInput" type="email" name="Mail" placeholder="Adresse Mail">
-          <input class="loginInput" type="text" name="Adress" placeholder="Adresse">
-          <input class="loginInput" type="number" name="postalCode" placeholder="Code postal">
+          <input class="loginInput" type="text" name="nom" placeholder="Nom">
+          <input class="loginInput" type="email" name="email" placeholder="Adresse Mail">
+          <input class="loginInput" type="text" name="adresse" placeholder="Adresse">
+          <input class="loginInput" type="text" name="ville" placeholder="Code postal">
         </div>
 
         <div class="containerRight">
-          <input class="loginInput" type="text" name="name" placeholder="Prénom">
+          <input class="loginInput" type="text" name="prenom" placeholder="Prénom">
           <input class="loginInput" type="password" name="password" placeholder="Votre mot de passe">
-          <input class="loginInput" type="text" name="age" placeholder="Age">
+          <input class="loginInput" type="text" name="date_naissance" placeholder="date_naissance">
         </div>
 
       </div>

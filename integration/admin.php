@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: guillaume
+ * Date: 15/02/2018
+ * Time: 11:57
+ */
 
 require_once "connexion.php";
 
@@ -13,7 +19,7 @@ if (true) {
 `email`,
 `password`
 FROM
-`Users`
+`loginAdmin`
 WHERE
 `email` = :email and
 `password` = :password
@@ -26,7 +32,7 @@ WHERE
         $user = $stmt->fetch();
 
         if ($user) {
-            header('location: index.php');
+            header('location: ../app/backOffice/index.php');
         }
 
     }
@@ -42,8 +48,8 @@ WHERE
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="meatLogo.ico">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
     <title>Meat</title>
 </head>
 
@@ -59,9 +65,7 @@ WHERE
             <div class="formFlex">
                 <input class="loginInput" type="email" name="email" value="" placeholder="Votre Email">
                 <input class="loginInput" type="password" name="password" value="" placeholder="Votre mot de passe">
-                <p class="formText">Vous n’avez pas de compte ? <strong><a class="Register" href="add.php">Inscrivez-vous !</a></strong></p>
                 <input class="submitInput" type="submit" name="submit" value="Se Connecter">
-                <a href="admin.php" class="link"><div class="submitInput">Connection Admin</div></a>
             </div>
         </form>
 
@@ -89,33 +93,15 @@ WHERE
 require_once "connexion.php";
 
 $password = $_POST['password'];
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
-$adresse = $_POST['adresse'];
-$date = $_POST['date_naissance'];
-$ville = $_POST['ville'];
 $email = $_POST['email'];
 
-$requete = "INSERT INTO `Users` (`nom`, `prenom`, `adresse`, `date_naissance`, `ville`, `email`, `password`) VALUES (:nom, :prenom, :adresse, :date_naissance, :ville, :email, :password);";
+$requete = "INSERT INTO `loginAdmin` (`email`, `password`) VALUES (:email, :password);";
 
 $stmt = $conn->prepare($requete);
 
-$stmt->bindParam(':nom', $nom);
-$stmt->bindParam(':prenom', $prenom);
-$stmt->bindParam(':adresse', $adresse);
-$stmt->bindParam(':date_naissance', $date);
-$stmt->bindParam(':ville', $ville);
 $stmt->bindParam(':email', $email);
 $stmt->bindParam(':password', $password);
 
 $stmt->execute();
 
 ?>
-
-
-
-
-
-
-
-
