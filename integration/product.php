@@ -78,7 +78,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
           <?php }  ?>
       </div>
       <div class="priceContainer">
-        <p id="prix" class="price"><?=$row['prix']?> €/kg</p>
+        <p id="prix" class="price"><?=$row['prix']?> €/pièce</p>
       </div>
     </div>
 

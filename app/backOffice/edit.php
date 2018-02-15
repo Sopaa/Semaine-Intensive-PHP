@@ -54,6 +54,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <title>Document</title>
 </head>
 <body>
+<!-- On remplit notre form avec les value des éléments de la db puis on les renvoit en POST -->
 <form action="doedit.php" method="post" enctype="multipart/form-data">
     <label for="id"> id : <input type="text" name="id" value="<?=$row['id'] ?>"></label>
     <label for="nom"> nom : <input type="text" name="nom" value="<?=$row['nom'] ?>"></label>
