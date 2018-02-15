@@ -19,7 +19,8 @@ if (empty($_POST['id']) || empty($_POST['nom']) || empty($_POST['categorie']) ||
     exit;
 }*/
 
-/* Requête pour sélectionner tous les éléments de la tables meat à l'id récupéré en GET dans l'URL*/
+
+    /* Get the id through the method GET, then execute the request */
 $request = 'SELECT
 `id`,
 `nom`,
@@ -68,8 +69,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="formContainer">
 
         <h1 class="title">Modifier les produits.</h1>
-
-<!-- On remplit notre form avec les valeurs des éléments de la db puis on les renvoit en POST -->
+<!-- Fill the form with the elements values from the db then send them through POST method -->
 <form class="form" action="doedit.php" method="post" enctype="multipart/form-data">
     <div class="formFlex">
     <input class="loginInput" type="number" placeholder="Identifiant" name="id" value="<?=$row['id'] ?>">

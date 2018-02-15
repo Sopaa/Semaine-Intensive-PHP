@@ -8,7 +8,7 @@
 
 require_once "../app/backOffice/connexion.php";
 
-/* requête */
+/* request */
 $request = 'SELECT
 `id`,
 `nom`,
@@ -31,7 +31,7 @@ WHERE
 ;';
 
 $stmt = $connection->prepare($request);
-/* On récupère l'id en get puis on effectue la requête*/
+/* Get the id through the method GET, then execute the request */
 $stmt->bindValue(':id', $_GET['id']);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -52,7 +52,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-<!-- On remplit nos champs avec les valeurs retournées dans $row -->
+<!-- Fill the fields with values returned in $row */ -->
   <h1 id="categorie" class="productTitle"><a href="categories.php?>" style="text-decoration: none; color: #FFFFFF;"><?=$row['categorie']?></a></h1>
 
   <div class="mainContainer">
@@ -84,7 +84,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <div class="rightContainer">
 
-        <!-- Si l'élément est vide, on n'affiche pas la div -->
+        <!-- If element is empty, do not print the div -->
         <?php if(!empty($row['plaisirDesYeux'])) {?>
       <div class="productDescription">
         <h2 class="descriptionTitle">Plaisir des yeux</h2>
@@ -92,7 +92,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       </div>
         <?php } ?>
 
-        <!-- Si l'élément est vide, on n'affiche pas la div -->
+        <!-- If element is empty, do not print the div -->
         <?php if(!empty($row['elevage'])) {?>
       <div class="productDescription">
         <h2 class="descriptionTitle">Elevage</h2>
@@ -100,7 +100,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       </div>
         <?php } ?>
 
-        <!-- Si l'élément est vide, on n'affiche pas la div -->
+        <!-- If element is empty, do not print the div -->
         <?php if(!empty($row['degustation'])) {?>
       <div class="productDescription">
         <h2 class="descriptionTitle">Degustation</h2>
@@ -108,7 +108,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       </div>
         <?php } ?>
 
-        <!-- Si l'élément est vide, on n'affiche pas la div -->
+        <!-- If element is empty, do not print the div -->
         <?php if(!empty($row['origine'])) {?>
       <div class="productDescription">
         <h2 class="descriptionTitle">Origine</h2>

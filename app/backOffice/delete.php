@@ -11,7 +11,7 @@ session_start();
 if(isset($_SESSION['logged'])){
 require_once "connexion.php";
 
-/* Requête */
+/* Request */
 $request = 'SELECT
 `id`,
 `nom`,
@@ -32,8 +32,7 @@ WHERE
 `id` = :id  
 
 ;';
-
-/* On récupère l'id en get qu'on passe dans la requête*/
+/* Get back id with the method GET passed in request  */
 $stmt = $connection->prepare($request);
 $stmt->bindValue(':id', $_GET['id']);
 $stmt->execute();

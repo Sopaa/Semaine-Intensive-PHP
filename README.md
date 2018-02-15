@@ -18,7 +18,7 @@ Nous avons developpé en PHP/MySQL et intégré en HTML/CSS une application Web 
 *  Stock (entier)
 
 ## SiteMap
-![](/img/sitemap.png)
+![](/reference/SiteMap.png)
 
 ### Formulaire
 GET /add.php
